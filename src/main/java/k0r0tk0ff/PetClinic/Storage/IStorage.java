@@ -1,7 +1,9 @@
 package k0r0tk0ff.PetClinic.Storage;
 
+
 import k0r0tk0ff.PetClinic.Client;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -13,5 +15,6 @@ import java.util.Map;
  *
  */
 public interface IStorage {
+
     //Map<Client, ListArray A>
 }

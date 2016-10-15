@@ -27,16 +27,19 @@ public class Starter {
                 )
         );
 
-        mainmenu.showMainMenu();
-        mainmenu.showIntroFromActions();
+        //MainMenu mainmenu = new MainMenu();
 
+        //mainmenu.showMainMenu();
+        //mainmenu.showIntroFromActions();
 
-        mainmenu.runMainMenu(
-            new Validator(
-                new ConsoleIO(
-                    new Scanner(System.in)
-                )
-            )
-        );
+        mainmenu.runMainMenu();
+
+        //mainmenu.runMainMenu(
+        //    new Validator(
+        //        new ConsoleIO(
+        //            new Scanner(System.in)
+        //        )
+        //    )
+        //);
     }
 }

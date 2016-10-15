@@ -29,7 +29,7 @@ public class Validator{
      * @return return_double_value
      * @param  input_string (String variable from console)
      */
-    double getDouble(final String input_string){
+    public double getDouble(final String input_string){
         while (success_input == 0) {
             try{
                 Scanner reader = new Scanner(System.in);
@@ -48,7 +48,7 @@ public class Validator{
      * @param  input_string (String variable from console)
      * @return return_int_value
      */
-    int getInt(final String input_string){
+    public int getInt(final String input_string){
         while (success_input == 0) {
             try{
                 Scanner reader = new Scanner(System.in);
@@ -63,8 +63,8 @@ public class Validator{
 
     /**
      * Method compare input String variable entered from keyboard with etalon value
+     * before ask user question in message_to_out
      *
-     * @param  (io.input_read entered from keyboard)
      * @param  etalon parameter
      * @return true or false
      */

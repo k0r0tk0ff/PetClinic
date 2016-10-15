@@ -17,7 +17,6 @@ public class MainMenu {
 
     AddClientAction addClientAction = new AddClientAction();
     DelClientAction delClientAction = new DelClientAction();
-    private IO io;
     private final Validator validator;
 
     public MainMenu(Validator validator) {
@@ -36,8 +35,9 @@ public class MainMenu {
     }
 
 
-    void runMainMenu(Validator validator){
+    void runMainMenu(){
         do{
+            showMainMenu();
             showIntroFromActions();
           } while(this.validator.compare("\n Work farther ? (y)\n", "y"));
     }
