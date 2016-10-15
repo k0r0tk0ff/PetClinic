@@ -2,6 +2,7 @@ package k0r0tk0ff.PetClinic;
 
 import k0r0tk0ff.PetClinic.Actions.*;
 import k0r0tk0ff.PetClinic.IO.*;
+import k0r0tk0ff.PetClinic.IO.Validator;
 
 /**
  * Class describe a MainMenu
@@ -14,13 +15,20 @@ import k0r0tk0ff.PetClinic.IO.*;
 public class MainMenu {
 
     AddClientAction addClientAction = new AddClientAction();
-    Validator validator = new Validator;
+    DelClientAction delClientAction = new DelClientAction();
+    //private IO io;
+    Validator validator = new Validator();
+
+    void showMainMenu(){
+        System.out.print("\n Clinic home pets \n");
+    }
 
     void showIntroFromActions(){
            addClientAction.intro();
+           delClientAction.intro();
     }
 
-    validator.aaa();
+    //validator.getI();
 
     //public void starter(){
     //    do{

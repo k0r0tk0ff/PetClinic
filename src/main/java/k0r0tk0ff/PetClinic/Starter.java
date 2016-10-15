@@ -16,6 +16,7 @@ public class Starter {
     public static void main(String[] arg){
         MainMenu mainmenu = new MainMenu();
 
+        mainmenu.showMainMenu();
         mainmenu.showIntroFromActions();
     }
 }

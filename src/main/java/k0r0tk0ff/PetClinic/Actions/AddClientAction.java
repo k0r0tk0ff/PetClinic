@@ -33,7 +33,7 @@ public class AddClientAction implements PetClinicAction {
      */
     @Override
     public void intro(){
-        System.out.print(" Add a new client - "+this.key());
+        System.out.println(this.key()+" - Add a new client ");
     }
 
     /**
