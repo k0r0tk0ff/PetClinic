@@ -8,11 +8,12 @@ import java.util.Scanner;
  * Interface for console input from keyboard
  * @author k0r0tk0ff
  * @author peterarsentev
- * @since 14.10.2016
- * @version 1.0
+ * @since 15.10.2016
+ * @version 1.1
  */
 public class ConsoleIO implements IO {
     private final Scanner scanner = new Scanner(System.in);
+
 
     @Override
     public String print(String string){
@@ -20,7 +21,9 @@ public class ConsoleIO implements IO {
     }
 
     @Override
-    public String input() {
+    public String input_read() {
         return this.scanner.next();
     }
+
+
 }

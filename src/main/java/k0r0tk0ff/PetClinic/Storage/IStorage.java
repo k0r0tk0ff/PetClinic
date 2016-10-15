@@ -1,5 +1,9 @@
 package k0r0tk0ff.PetClinic.Storage;
 
+import k0r0tk0ff.PetClinic.Client;
+
+import java.util.Map;
+
 /**
  * Interface for storage that must contains clients and his pets
  * @author k0r0tk0ff
@@ -9,4 +13,5 @@ package k0r0tk0ff.PetClinic.Storage;
  *
  */
 public interface IStorage {
+    Map<Client, ListArray A>
 }

@@ -13,14 +13,15 @@ import k0r0tk0ff.PetClinic.IO.*;
  * @version 1.2
  */
 public class Validator{
-    //private final IO io;
+    private final IO io;
     private double return_double_value = 0.0;
     private int return_int_value = 0;
     private int success_input = 0;
+    private boolean exit_compare;
 
-    //public Validator(IO io) {
-    //    this.io = io;
-    //}
+    public Validator(IO io) {
+        this.io = io;
+    }
 
     /**
      * Method return double value after parsing String input from keyboard
@@ -60,4 +61,14 @@ public class Validator{
         return return_int_value;
     }
 
+    /**
+     * Method compare input String variable entered from keyboard with etalon value
+     *
+     * @param  (io.input_read entered from keyboard)
+     * @param  etalon parameter
+     * @return true or false
+     */
+    boolean compare(final String etalon){
+        return  io.input_read().equals(etalon);
+    }
 }

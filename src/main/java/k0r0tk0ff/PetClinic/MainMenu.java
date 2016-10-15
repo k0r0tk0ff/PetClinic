@@ -28,11 +28,9 @@ public class MainMenu {
            delClientAction.intro();
     }
 
-    //validator.getI();
+    do{
+    showIntroFromActions();
 
-    //public void starter(){
-    //    do{
-    //       showIntroFromActions();
-
-    //    }while();
+        System.out.print("\n Work farther ? \n");
+    }while(validator.compare);
 }
