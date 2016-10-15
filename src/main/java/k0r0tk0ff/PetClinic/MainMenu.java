@@ -3,6 +3,7 @@ package k0r0tk0ff.PetClinic;
 import k0r0tk0ff.PetClinic.Actions.*;
 import k0r0tk0ff.PetClinic.IO.*;
 import k0r0tk0ff.PetClinic.IO.Validator;
+import java.util.Scanner;
 
 /**
  * Class describe a MainMenu
@@ -16,8 +17,14 @@ public class MainMenu {
 
     AddClientAction addClientAction = new AddClientAction();
     DelClientAction delClientAction = new DelClientAction();
-    //private IO io;
-    Validator validator = new Validator();
+    private IO io;
+    private final Validator validator;
+
+    public MainMenu(Validator validator) {
+        this.validator = validator;
+    }
+
+
 
     void showMainMenu(){
         System.out.print("\n Clinic home pets \n");
@@ -28,9 +35,10 @@ public class MainMenu {
            delClientAction.intro();
     }
 
-    do{
-    showIntroFromActions();
 
-        System.out.print("\n Work farther ? \n");
-    }while(validator.compare);
+    void runMainMenu(Validator validator){
+        do{
+            showIntroFromActions();
+          } while(this.validator.compare("\n Work farther ? (y)\n", "y"));
+    }
 }

@@ -68,7 +68,9 @@ public class Validator{
      * @param  etalon parameter
      * @return true or false
      */
-    boolean compare(final String etalon){
-        return  io.input_read().equals(etalon);
+    public boolean compare(final String message_to_out, final String etalon){
+        System.out.print(message_to_out);
+        if (etalon.equals(io.input_read())) return true;
+        else return false;
     }
 }

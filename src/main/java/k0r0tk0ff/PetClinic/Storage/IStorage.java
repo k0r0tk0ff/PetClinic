@@ -13,5 +13,5 @@ import java.util.Map;
  *
  */
 public interface IStorage {
-    Map<Client, ListArray A>
+    //Map<Client, ListArray A>
 }
