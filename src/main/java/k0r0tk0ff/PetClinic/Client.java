@@ -12,12 +12,17 @@ import java.util.ArrayList;
 
 public class Client {
     String name;
-    int clientId;
-    ArrayList<String> pets = new ArrayList<String>();
+    int id;
+    ArrayList<String> arrayList;
 
-    public Client(String name){
+    public Client(int id, final String name, ArrayList<String> arrayList){
+        this.id = id;
         this.name = name;
+        this.arrayList = arrayList;
     }
 
+    int getClientId (){
+        return this.id;
+    }
 
 }
