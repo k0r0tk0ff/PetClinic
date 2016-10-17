@@ -25,4 +25,8 @@ public class Client {
         return this.id;
     }
 
+    String getClientName(){
+        return this.name;
+    }
+
 }

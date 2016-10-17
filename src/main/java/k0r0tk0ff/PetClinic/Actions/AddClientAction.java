@@ -1,5 +1,18 @@
 package k0r0tk0ff.PetClinic.Actions;
 
+import k0r0tk0ff.PetClinic.Client;
+import k0r0tk0ff.PetClinic.Data.Data;
+import k0r0tk0ff.PetClinic.IO.ConsoleIO;
+import k0r0tk0ff.PetClinic.IO.IO;
+import k0r0tk0ff.PetClinic.IO.Validator;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+
+import k0r0tk0ff.PetClinic.MainMenu;
+
 /**
  * Class describe add client to data storage
  * @author k0r0tk0ff
@@ -9,6 +22,18 @@ package k0r0tk0ff.PetClinic.Actions;
  */
 
 public class AddClientAction implements PetClinicAction {
+
+    private Data data;
+    private ConsoleIO io = new ConsoleIO(new Scanner(System.in));
+
+    public AddClientAction(Data data) {
+        this.data = data;
+    }
+
+    /**
+     * Declare iterable variable for generate id for clients
+     */
+    private int iterable_id = 0;
 
     /**
      * Main method for AddClientAction
@@ -20,7 +45,8 @@ public class AddClientAction implements PetClinicAction {
      */
     @Override
     public void exe(){
-
+        Client client = new Client(iterable_id++, io.input_read(), new ArrayList<>());
+        data.clients.add(client);
     }
 
     /**

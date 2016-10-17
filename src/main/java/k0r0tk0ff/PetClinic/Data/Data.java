@@ -14,6 +14,6 @@ import java.util.ArrayList;
 
 public class Data implements I_DataModel {
 
-    ArrayList<Client> clients = new ArrayList<>();
+    public ArrayList<Client> clients = new ArrayList<>();
 
 }
