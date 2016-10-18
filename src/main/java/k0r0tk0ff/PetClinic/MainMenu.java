@@ -16,19 +16,17 @@ import java.util.Scanner;
 
 public class MainMenu {
 
-    //public Validator vd;
-
     public Validator validator;
     public Data data;
 
-    AddClientAction addClientAction;
+
 
 
     public MainMenu(Validator validator, Data data) {
         this.validator = validator;
         this.data = data;
 
-        addClientAction = new AddClientAction(data, validator);
+        //addClientAction = new AddClientAction(data, validator);
     }
 
 
@@ -39,23 +37,37 @@ public class MainMenu {
     }
 
     void showIntroFromActions(){
-           addClientAction.intro();
-           //delClientAction.intro();
+        data.actions.values().forEach(PetClinicAction::intro);
     }
 
+    void loadAction(final PetClinicAction action){
+        data.actions.put(action.key(), action);
+    }
 
     void runMainMenu(){
 
-
-        addClientAction.exe();
 
         do{
             showMainMenu();
             showIntroFromActions();
 
+            /**
+             * Do add client
+             */
 
-            data.clients.forEach(Client::getClientName);
+            for (PetClinicAction action: data.actions.values()) {
+                action.exe(data, validator);
+            }
 
-          } while(this.validator.compare("\n Work farther ? (y)\n", "y"));
+            /**
+             * Show clients
+             */
+
+            for (Client client : data.clients) {
+                client.getClientName();
+            }
+
+
+        } while(this.validator.compare("\n Work farther ? (y)\n", "y"));
     }
 }

@@ -2,16 +2,13 @@ package k0r0tk0ff.PetClinic.Actions;
 
 import k0r0tk0ff.PetClinic.Client;
 import k0r0tk0ff.PetClinic.Data.Data;
-import k0r0tk0ff.PetClinic.IO.ConsoleIO;
-import k0r0tk0ff.PetClinic.IO.IO;
+
 import k0r0tk0ff.PetClinic.IO.Validator;
 
 import java.util.ArrayList;
-import java.util.Scanner;
-
-
-
 import k0r0tk0ff.PetClinic.MainMenu;
+import k0r0tk0ff.PetClinic.Starter;
+
 
 /**
  * Class describe add client to data storage
@@ -23,13 +20,16 @@ import k0r0tk0ff.PetClinic.MainMenu;
 
 public class AddClientAction implements PetClinicAction {
 
-    Data data;
-    Validator validator;
+    //Data data;
+    //Validator validator;
 
-    public AddClientAction(Data data, Validator validator) {
-        this.data = data;
-        this.validator = validator;
-    }
+    //public AddClientAction(Data data, Validator validator) {
+    //    this.data = data;
+    //    this.validator = validator;
+    //}
+
+   // public AddClientAction() {
+   // }
 
     /**
      * Declare iterable variable for generate id for clients
@@ -44,7 +44,7 @@ public class AddClientAction implements PetClinicAction {
      * @return int key
      */
     @Override
-    public void exe(){
+    public void exe(Data data, Validator validator){
         final String name = validator.getString(" Enter the name of client: ");
         Client client = new Client(iterable_id++, name, new ArrayList<>());
         data.clients.add(client);

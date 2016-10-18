@@ -22,7 +22,11 @@ public class Starter {
 
     public static void main(String[] arg){
 
-        Data data = new Data();
+        //Data data = new Data();
+        //Validator validator = new Validator(new ConsoleIO (new Scanner(System.in)));
+
+        //MainMenu mainmenu = new MainMenu(validator, data);
+
 
         MainMenu mainmenu = new MainMenu(
                 new Validator(
@@ -30,9 +34,11 @@ public class Starter {
                                 new Scanner(System.in)
                         )
                 )
-        , data);
+        , new Data());
 
-        //AddClientAction addClientAction = new AddClientAction(data, validator);
+
+
+        mainmenu.loadAction(new AddClientAction());
 
         mainmenu.runMainMenu();
 

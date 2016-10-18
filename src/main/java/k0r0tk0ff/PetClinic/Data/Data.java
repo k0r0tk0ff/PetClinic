@@ -2,7 +2,10 @@ package k0r0tk0ff.PetClinic.Data;
 
 import k0r0tk0ff.PetClinic.Client;
 
+import k0r0tk0ff.PetClinic.Actions.*;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Interface for console input from keyboard
@@ -15,5 +18,7 @@ import java.util.ArrayList;
 public class Data implements I_DataModel {
 
     public ArrayList<Client> clients = new ArrayList<>();
+
+    public HashMap<Integer, PetClinicAction> actions = new HashMap<>();
 
 }

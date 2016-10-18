@@ -1,5 +1,8 @@
 package k0r0tk0ff.PetClinic.Actions;
 
+import k0r0tk0ff.PetClinic.Data.Data;
+import k0r0tk0ff.PetClinic.IO.Validator;
+
 import javax.swing.*;
 
 /**
@@ -18,7 +21,7 @@ public class DelClientAction implements PetClinicAction {
          *
          */
         @Override
-        public void exe(){
+        public void exe(Data data, Validator validator){
 
         }
 
