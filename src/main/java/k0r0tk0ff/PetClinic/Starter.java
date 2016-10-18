@@ -1,5 +1,6 @@
 package k0r0tk0ff.PetClinic;
 
+import k0r0tk0ff.PetClinic.Actions.AddClientAction;
 import k0r0tk0ff.PetClinic.Data.Data;
 import k0r0tk0ff.PetClinic.IO.ConsoleIO;
 import k0r0tk0ff.PetClinic.IO.IO;
@@ -31,7 +32,7 @@ public class Starter {
                 )
         , data);
 
-
+        //AddClientAction addClientAction = new AddClientAction(data, validator);
 
         mainmenu.runMainMenu();
 

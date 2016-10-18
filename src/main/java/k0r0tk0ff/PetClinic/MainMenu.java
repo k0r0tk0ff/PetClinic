@@ -16,19 +16,23 @@ import java.util.Scanner;
 
 public class MainMenu {
 
+    //public Validator vd;
 
-
-    private final Validator validator;
+    public Validator validator;
     public Data data;
 
-    AddClientAction addClientAction = new AddClientAction(data);
-    //DelClientAction delClientAction = new DelClientAction(data);
+    AddClientAction addClientAction;
 
 
     public MainMenu(Validator validator, Data data) {
         this.validator = validator;
         this.data = data;
+
+        addClientAction = new AddClientAction(data, validator);
     }
+
+
+    //DelClientAction delClientAction = new DelClientAction(data);
 
     void showMainMenu(){
         System.out.print("\n Clinic home pets \n");
@@ -42,6 +46,7 @@ public class MainMenu {
 
     void runMainMenu(){
 
+
         addClientAction.exe();
 
         do{
@@ -49,13 +54,7 @@ public class MainMenu {
             showIntroFromActions();
 
 
-
-
-            for ( Client client : data.clients ) {
-                client.getClientName();
-            }
-
-
+            data.clients.forEach(Client::getClientName);
 
           } while(this.validator.compare("\n Work farther ? (y)\n", "y"));
     }

@@ -1,5 +1,7 @@
 package k0r0tk0ff.PetClinic.IO;
 
+import java.io.Closeable;
+import java.io.IOException;
 import java.util.Scanner;
 
 import k0r0tk0ff.PetClinic.IO.*;
@@ -12,7 +14,7 @@ import k0r0tk0ff.PetClinic.IO.*;
  * @since 15.10.2016
  * @version 1.2
  */
-public class Validator{
+public class Validator implements Closeable{
     private final IO io;
     private double return_double_value = 0.0;
     private int return_int_value = 0;
@@ -72,5 +74,30 @@ public class Validator{
         System.out.print(message_to_out);
         if (etalon.equals(io.input_read())) return true;
         else return false;
+    }
+
+    public String getString(String msg){
+        System.out.println(msg);
+        return this.io.input_read();
+
+    }
+
+
+    /**
+     * Closes this stream and releases any system resources associated
+     * with it. If the stream is already closed then invoking this
+     * method has no effect.
+     * <p>
+     * <p> As noted in {@link AutoCloseable#close()}, cases where the
+     * close may fail require careful attention. It is strongly advised
+     * to relinquish the underlying resources and to internally
+     * <em>mark</em> the {@code Closeable} as closed, prior to throwing
+     * the {@code IOException}.
+     *
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    public void close() throws IOException {
+
     }
 }

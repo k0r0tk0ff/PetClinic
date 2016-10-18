@@ -23,11 +23,12 @@ import k0r0tk0ff.PetClinic.MainMenu;
 
 public class AddClientAction implements PetClinicAction {
 
-    private Data data;
-    private ConsoleIO io = new ConsoleIO(new Scanner(System.in));
+    Data data;
+    Validator validator;
 
-    public AddClientAction(Data data) {
+    public AddClientAction(Data data, Validator validator) {
         this.data = data;
+        this.validator = validator;
     }
 
     /**
@@ -39,13 +40,13 @@ public class AddClientAction implements PetClinicAction {
      * Main method for AddClientAction
      * add a new client to data storage
      * @since 14.10.2016
-     * @version 1.0
      *
      * @return int key
      */
     @Override
     public void exe(){
-        Client client = new Client(iterable_id++, io.input_read(), new ArrayList<>());
+        final String name = validator.getString(" Enter the name of client: ");
+        Client client = new Client(iterable_id++, name, new ArrayList<>());
         data.clients.add(client);
     }
 

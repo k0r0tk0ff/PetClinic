@@ -1,5 +1,6 @@
 package k0r0tk0ff.PetClinic.IO;
 
+import java.io.Closeable;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.util.Scanner;
@@ -28,6 +29,5 @@ public class ConsoleIO implements IO {
     public String input_read() {
         return this.scanner.next();
     }
-
 
 }
