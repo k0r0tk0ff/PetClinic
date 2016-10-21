@@ -21,12 +21,17 @@ public class Client {
         this.arrayList = arrayList;
     }
 
-    int getClientId (){
-        return this.id;
+    public Client(int id, final String name){
+        this.id = id;
+        this.name = name;
     }
 
-    String getClientName(){
-        return this.name;
+    public int getClientId (){
+        return id;
+    }
+
+    public String getClientName(){
+        return name;
     }
 
 }

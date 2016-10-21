@@ -6,9 +6,6 @@ import k0r0tk0ff.PetClinic.Data.Data;
 import k0r0tk0ff.PetClinic.IO.Validator;
 
 import java.util.ArrayList;
-import k0r0tk0ff.PetClinic.MainMenu;
-import k0r0tk0ff.PetClinic.Starter;
-
 
 /**
  * Class describe add client to data storage
@@ -45,9 +42,11 @@ public class AddClientAction implements PetClinicAction {
      */
     @Override
     public void exe(Data data, Validator validator){
+
         final String name = validator.getString(" Enter the name of client: ");
         Client client = new Client(iterable_id++, name, new ArrayList<>());
         data.clients.add(client);
+
     }
 
     /**

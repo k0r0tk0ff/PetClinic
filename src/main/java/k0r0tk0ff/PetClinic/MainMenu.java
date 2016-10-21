@@ -4,6 +4,8 @@ import k0r0tk0ff.PetClinic.Actions.*;
 import k0r0tk0ff.PetClinic.Data.Data;
 import k0r0tk0ff.PetClinic.IO.*;
 import k0r0tk0ff.PetClinic.IO.Validator;
+
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -18,19 +20,12 @@ public class MainMenu {
 
     public Validator validator;
     public Data data;
-
-
-
+    //int success_exit = 0;
 
     public MainMenu(Validator validator, Data data) {
         this.validator = validator;
         this.data = data;
-
-        //addClientAction = new AddClientAction(data, validator);
-    }
-
-
-    //DelClientAction delClientAction = new DelClientAction(data);
+     }
 
     void showMainMenu(){
         System.out.print("\n Clinic home pets \n");
@@ -46,28 +41,26 @@ public class MainMenu {
 
     void runMainMenu(){
 
-
         do{
             showMainMenu();
             showIntroFromActions();
 
-            /**
-             * Do add client
-             */
-
-            for (PetClinicAction action: data.actions.values()) {
-                action.exe(data, validator);
+            for (Map.Entry<Integer, PetClinicAction> entry : data.actions.entrySet()) {
+                if(entry.getKey() ==
+                        validator.getInt(validator.getString(" Enter the action: "))
+                  )
+                {entry.getValue().exe(data, validator);}
             }
 
-            /**
-             * Show clients
-             */
+            ///**
+            // * Do add client
+            // */
+            //for (PetClinicAction action: data.actions.values()) {
+            //    action.exe(data, validator);
+            //}
 
-            for (Client client : data.clients) {
-                client.getClientName();
-            }
 
 
-        } while(this.validator.compare("\n Work farther ? (y)\n", "y"));
+        } while(validator.compare("\n Work farther ? (y)\n", "y"));
     }
 }
