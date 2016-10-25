@@ -21,7 +21,7 @@ public class ShowClientsAction implements PetClinicAction {
      * Show clients in data storage
      */
     @Override
-    public void exe(Data data, Validator validator){
+    public void exe(Data data){
 
         /**
          * Show clients

@@ -2,11 +2,11 @@ package k0r0tk0ff.PetClinic;
 
 import k0r0tk0ff.PetClinic.Actions.*;
 import k0r0tk0ff.PetClinic.Data.Data;
-import k0r0tk0ff.PetClinic.IO.*;
+import k0r0tk0ff.PetClinic.IO.ConsoleIO;
 import k0r0tk0ff.PetClinic.IO.Validator;
 
-import java.util.Map;
 import java.util.Scanner;
+
 
 /**
  * Class describe a MainMenu
@@ -18,13 +18,15 @@ import java.util.Scanner;
 
 public class MainMenu {
 
-    public Validator validator;
     public Data data;
+    public Validator validator;
+    int entry_key;
+
     //int success_exit = 0;
 
-    public MainMenu(Validator validator, Data data) {
-        this.validator = validator;
-        this.data = data;
+    public MainMenu(Data data, Validator validator) {
+         this.data = data;
+         this.validator = validator;
      }
 
     void showMainMenu(){
@@ -36,7 +38,7 @@ public class MainMenu {
     }
 
     void loadAction(final PetClinicAction action){
-        data.actions.put(action.key(), action);
+        this.data.actions.put(action.key(), action);
     }
 
     void runMainMenu(){
@@ -45,21 +47,22 @@ public class MainMenu {
             showMainMenu();
             showIntroFromActions();
 
-            for (Map.Entry<Integer, PetClinicAction> entry : data.actions.entrySet()) {
-                if(entry.getKey() ==
-                        validator.getInt(validator.getString(" Enter the action: "))
-                  )
-                {entry.getValue().exe(data, validator);}
-            }
+            Validator val2 = new Validator();
 
-            ///**
-            // * Do add client
-            // */
-            //for (PetClinicAction action: data.actions.values()) {
-            //    action.exe(data, validator);
+            //Iterator<HashMap.Entry<Integer, PetClinicAction>> entries = data.actions.entrySet().iterator();
+            //while (entries.hasNext()){
+            //    HashMap.Entry<Integer, PetClinicAction> entry = entries.next();
+            //    //System.out.println("Key = " + entry.getKey() + ", Value = " +
+            //    //        entry.getValue());
+            //    if (entry.getKey() == validator.getInt(validator.getString(" Enter an action : "))){
+            //        entry.getValue().exe(data, validator);
+            //    }
             //}
 
+            entry_key = val2.getInt(val2.getString(" Press the key: "));
+            this.data.actions.get(entry_key).exe(this.data);
 
+            System.out.println(" Input is "+ entry_key);
 
         } while(validator.compare("\n Work farther ? (y)\n", "y"));
     }

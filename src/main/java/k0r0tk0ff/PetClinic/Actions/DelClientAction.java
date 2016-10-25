@@ -21,7 +21,7 @@ public class DelClientAction implements PetClinicAction {
          *
          */
         @Override
-        public void exe(Data data, Validator validator){
+        public void exe(Data data){
 
         }
 

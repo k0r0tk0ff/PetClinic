@@ -13,6 +13,6 @@ import k0r0tk0ff.PetClinic.IO.Validator;
 
 public interface PetClinicAction {
     public void intro();
-    public void exe(Data data, Validator validator);
+    public void exe(Data data);
     public int key();
 }

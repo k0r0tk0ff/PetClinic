@@ -18,11 +18,11 @@ import java.util.ArrayList;
 public class AddClientAction implements PetClinicAction {
 
     //Data data;
-    //Validator validator;
+    Validator validator = new Validator();
 
-    //public AddClientAction(Data data, Validator validator) {
-    //    this.data = data;
-    //    this.validator = validator;
+    //public AddClientAction() {
+        //this.data = data;
+        //Validator validator = new Validator();
     //}
 
    // public AddClientAction() {
@@ -41,7 +41,8 @@ public class AddClientAction implements PetClinicAction {
      * @return int key
      */
     @Override
-    public void exe(Data data, Validator validator){
+    public void exe(Data data){
+
 
         final String name = validator.getString(" Enter the name of client: ");
         Client client = new Client(iterable_id++, name, new ArrayList<>());

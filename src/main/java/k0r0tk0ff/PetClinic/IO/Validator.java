@@ -15,15 +15,15 @@ import k0r0tk0ff.PetClinic.IO.*;
  * @version 1.2
  */
 public class Validator implements Closeable{
-    private final IO io;
+    //private final IO io;
     private double return_double_value = 0.0;
     private int return_int_value = 0;
     private int success_input = 0;
     private boolean exit_compare;
 
-    public Validator(IO io) {
-        this.io = io;
-    }
+    //public Validator(IO io) {
+    //    this.io = io;
+    //}
 
     /**
      * Method return double value after parsing String input from keyboard
@@ -71,14 +71,16 @@ public class Validator implements Closeable{
      * @return true or false
      */
     public boolean compare(final String message_to_out, final String etalon){
+        IO io = new ConsoleIO(new Scanner(System.in));
         System.out.print(message_to_out);
         if (etalon.equals(io.input_read())) return true;
         else return false;
     }
 
     public String getString(String msg){
+        IO io = new ConsoleIO(new Scanner(System.in));
         System.out.println(msg);
-        return this.io.input_read();
+        return io.input_read();
 
     }
 
