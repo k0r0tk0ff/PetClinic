@@ -64,10 +64,10 @@ public class MainMenu {
             //input_key = this.checker.getInt(this.consoleIO.input_read(" Enter int value:"));
             //System.out.println(input_key);
 
-            int enter = checker.getInt(consoleIO.input_read(" Enter an action : "));
+            int enter_from_keyboard = checker.getInt(consoleIO.input_read(" Enter an action : "));
 
             for (Map.Entry<Integer, PetClinicAction> entries : data.actions.entrySet()) {
-                if (entries.getKey().equals(enter)){
+                if (entries.getKey().equals(enter_from_keyboard)){
                               entries.getValue().exe(this.data, this.consoleIO);
                    }
             }

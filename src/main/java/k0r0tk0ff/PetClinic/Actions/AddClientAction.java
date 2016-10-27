@@ -40,7 +40,7 @@ public class AddClientAction implements PetClinicAction {
     /**
      * Text output from console, describe what key
      * we can push for do this action AddClientAction
-     * @since 14.10.2016
+     * @since 27.10.2016
      * @version 1.0
      *
      * @return text from console "Add a new client - 1"
@@ -53,7 +53,7 @@ public class AddClientAction implements PetClinicAction {
     /**
      * Key for this action
      * need for bind "1" from console input and AddClientAction
-     * @since 14.10.2016
+     * @since 27.10.2016
      * @version 1.0
      *
      * @return int key
