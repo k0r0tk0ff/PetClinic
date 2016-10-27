@@ -4,9 +4,6 @@ import java.io.Closeable;
 import java.io.IOException;
 import java.util.Scanner;
 
-import k0r0tk0ff.PetClinic.IO.*;
-
-
 /**
  * Validator of input data from console input
  * @author k0r0tk0ff
@@ -14,16 +11,12 @@ import k0r0tk0ff.PetClinic.IO.*;
  * @since 15.10.2016
  * @version 1.2
  */
-public class Validator implements Closeable{
+public class Checker{
     //private final IO io;
     private double return_double_value = 0.0;
     private int return_int_value = 0;
     private int success_input = 0;
     private boolean exit_compare;
-
-    //public Validator(IO io) {
-    //    this.io = io;
-    //}
 
     /**
      * Method return double value after parsing String input from keyboard
@@ -81,25 +74,6 @@ public class Validator implements Closeable{
         IO io = new ConsoleIO(new Scanner(System.in));
         System.out.println(msg);
         return io.input_read();
-
-    }
-
-
-    /**
-     * Closes this stream and releases any system resources associated
-     * with it. If the stream is already closed then invoking this
-     * method has no effect.
-     * <p>
-     * <p> As noted in {@link AutoCloseable#close()}, cases where the
-     * close may fail require careful attention. It is strongly advised
-     * to relinquish the underlying resources and to internally
-     * <em>mark</em> the {@code Closeable} as closed, prior to throwing
-     * the {@code IOException}.
-     *
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    public void close() throws IOException {
 
     }
 }
