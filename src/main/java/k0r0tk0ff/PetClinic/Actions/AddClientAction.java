@@ -33,8 +33,8 @@ public class AddClientAction implements PetClinicAction {
     @Override
     public void exe(Data data, ConsoleIO consoleIO){
         final String name = consoleIO.input_read(" Enter the name of client: ");
-        Client client = new Client(iterable_id++, name, new ArrayList<>());
-        data.clients.add(client);
+        Client client = new Client(name, new ArrayList<>());
+        data.clients.put(iterable_id++, client);
     }
 
     /**

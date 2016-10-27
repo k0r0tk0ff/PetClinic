@@ -29,7 +29,7 @@ public class DelClientAction implements PetClinicAction {
                 final String entered_name = consoleIO.input_read(" Enter the name of client: ");
                 for (Client client : data.clients) {
                     if (client.getClientName().equals(entered_name)) {
-                        data.clients.remove(client);
+                        data.clients.remove(client.getClientId());
                         success_exit = 1;
                     } else {
                         System.out.println(" Client does not exist. Try again");

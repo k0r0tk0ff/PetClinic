@@ -6,6 +6,7 @@ import k0r0tk0ff.PetClinic.Actions.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Interface for console input from keyboard
@@ -17,7 +18,7 @@ import java.util.HashMap;
 
 public class Data implements I_DataModel {
 
-    public ArrayList<Client> clients = new ArrayList<>();
+    public ConcurrentHashMap<Integer, Client> clients = new ConcurrentHashMap();
 
     public HashMap<Integer, PetClinicAction> actions = new HashMap<>();
 
