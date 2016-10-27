@@ -1,9 +1,8 @@
 package k0r0tk0ff.PetClinic.Actions;
 
 import k0r0tk0ff.PetClinic.Data.Data;
-import k0r0tk0ff.PetClinic.IO.Validator;
+import k0r0tk0ff.PetClinic.IO.ConsoleIO;
 
-import javax.swing.*;
 
 /**
  * Class describe del client to data storage
@@ -21,7 +20,7 @@ public class DelClientAction implements PetClinicAction {
          *
          */
         @Override
-        public void exe(Data data){
+        public void exe(Data data, ConsoleIO consoleIO){
 
         }
 

@@ -12,11 +12,6 @@ import java.util.Scanner;
  * @version 1.2
  */
 public class Checker{
-    //private final IO io;
-    private double return_double_value = 0.0;
-    private int return_int_value = 0;
-    private int success_input = 0;
-    private boolean exit_compare;
 
     /**
      * Method return double value after parsing String input from keyboard
@@ -25,10 +20,19 @@ public class Checker{
      * @param  input_string (String variable from console)
      */
     public double getDouble(final String input_string){
+
+        /**
+         * Initializate local field in methods body,
+         * for replacement values between method`s call
+         * @param  input_string (String variable from console)
+         * @return return_double_value
+         */
+        int success_input = 0;
+        double return_double_value = 0.0;
+
         while (success_input == 0) {
             try{
-                Scanner reader = new Scanner(System.in);
-                return_double_value = Double.parseDouble(reader.next());
+                return_double_value = Double.parseDouble(input_string);
                 success_input = 1;
             }catch (NumberFormatException error){
                 System.out.println("\n Error input !!! Try again !!!");
@@ -43,11 +47,20 @@ public class Checker{
      * @param  input_string (String variable from console)
      * @return return_int_value
      */
-    public int getInt(final String input_string){
+    public int getInt(String input_string){
+
+        /**
+         * Initializate local field in methods body,
+         * for replacement values between method`s call
+         * @param  input_string (String variable from console)
+         * @return return_int_value
+         */
+        int success_input = 0;
+        int return_int_value = 0;
+
         while (success_input == 0) {
             try{
-                Scanner reader = new Scanner(System.in);
-                return_int_value = Integer.parseInt(reader.next());
+                return_int_value = Integer.parseInt(input_string);
                 success_input = 1;
             }catch (NumberFormatException error){
                 System.out.println("\n Error input !!! Try again !!!");
@@ -63,17 +76,9 @@ public class Checker{
      * @param  etalon parameter
      * @return true or false
      */
-    public boolean compare(final String message_to_out, final String etalon){
-        IO io = new ConsoleIO(new Scanner(System.in));
-        System.out.print(message_to_out);
-        if (etalon.equals(io.input_read())) return true;
+    public boolean compare(final String etalon, final ConsoleIO consoleIO){
+
+        if (etalon.equals(consoleIO.input_read("Try again? (y)"))) return true;
         else return false;
-    }
-
-    public String getString(String msg){
-        IO io = new ConsoleIO(new Scanner(System.in));
-        System.out.println(msg);
-        return io.input_read();
-
     }
 }

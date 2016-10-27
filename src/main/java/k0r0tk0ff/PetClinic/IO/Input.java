@@ -8,5 +8,5 @@ package k0r0tk0ff.PetClinic.IO;
  * @version 1.0
  */
 public interface Input {
-    String input_read();
+    String input_read(String msg);
 }

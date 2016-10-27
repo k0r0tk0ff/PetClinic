@@ -2,9 +2,10 @@ package k0r0tk0ff.PetClinic;
 
 import k0r0tk0ff.PetClinic.Actions.*;
 import k0r0tk0ff.PetClinic.Data.Data;
+import k0r0tk0ff.PetClinic.IO.Checker;
 import k0r0tk0ff.PetClinic.IO.ConsoleIO;
-import k0r0tk0ff.PetClinic.IO.Validator;
 
+import java.util.Map;
 import java.util.Scanner;
 
 
@@ -18,23 +19,22 @@ import java.util.Scanner;
 
 public class MainMenu {
 
-    public Data data;
-    public Validator validator;
-    int entry_key;
+    private ConsoleIO consoleIO;
+    private Data data;
+    private Checker checker;
 
-    //int success_exit = 0;
-
-    public MainMenu(Data data, Validator validator) {
-         this.data = data;
-         this.validator = validator;
-     }
+    public MainMenu(Data data, ConsoleIO consoleIO, Checker checker) {
+        this.data = data;
+        this.consoleIO = consoleIO;
+        this.checker = checker;
+    }
 
     void showMainMenu(){
         System.out.print("\n Clinic home pets \n");
     }
 
     void showIntroFromActions(){
-        data.actions.values().forEach(PetClinicAction::intro);
+        this.data.actions.values().forEach(PetClinicAction::intro);
     }
 
     void loadAction(final PetClinicAction action){
@@ -47,23 +47,44 @@ public class MainMenu {
             showMainMenu();
             showIntroFromActions();
 
-            Validator val2 = new Validator();
 
-            //Iterator<HashMap.Entry<Integer, PetClinicAction>> entries = data.actions.entrySet().iterator();
-            //while (entries.hasNext()){
-            //    HashMap.Entry<Integer, PetClinicAction> entry = entries.next();
-            //    //System.out.println("Key = " + entry.getKey() + ", Value = " +
-            //    //        entry.getValue());
-            //    if (entry.getKey() == validator.getInt(validator.getString(" Enter an action : "))){
-            //        entry.getValue().exe(data, validator);
-            //    }
+        /**
+            Iterator<HashMap.Entry<Integer, PetClinicAction>> entries = data.actions.entrySet().iterator();
+            while (entries.hasNext()){
+                HashMap.Entry<Integer, PetClinicAction> entry = entries.next();
+                System.out.println("Key = " + entry.getKey() + ", Value = " +
+                        entry.getValue());
+                if (entry.getKey() == checker.getInt(consoleIO.input_read(" Enter an action : "))){
+                    entry.getValue().exe(data);
+                }
+            }
+        */
+
+            //input_key = this.checker.getInt(this.consoleIO.input_read(" Enter int value:"));
+            //System.out.println(input_key);
+
+
+            for (Map.Entry<Integer, PetClinicAction> entries : data.actions.entrySet()) {
+                if (entries.getKey().equals(checker.getInt(consoleIO.input_read(" Enter an action : ")))){
+                              entries.getValue().exe(this.data, this.consoleIO);
+                   }
+            }
+
+
+
+            //Show the loaded actions
+            //for (Map.Entry<Integer, PetClinicAction> entries : data.actions.entrySet()) {
+            //   System.out.println(entries.getKey());
             //}
 
-            entry_key = val2.getInt(val2.getString(" Press the key: "));
-            this.data.actions.get(entry_key).exe(this.data);
+            //input_string = this.consoleIO.input_read(" Enter something");
+            //System.out.println(input_string);
 
-            System.out.println(" Input is "+ entry_key);
+            //input_string = this.consoleIO.input_read(" Enter something");
+            //System.out.println(input_string);
 
-        } while(validator.compare("\n Work farther ? (y)\n", "y"));
+
+
+        } while(this.checker.compare("y", consoleIO));
     }
 }

@@ -2,8 +2,7 @@ package k0r0tk0ff.PetClinic.Actions;
 
 import k0r0tk0ff.PetClinic.Client;
 import k0r0tk0ff.PetClinic.Data.Data;
-
-import k0r0tk0ff.PetClinic.IO.Validator;
+import k0r0tk0ff.PetClinic.IO.ConsoleIO;
 
 import java.util.ArrayList;
 
@@ -16,17 +15,8 @@ import java.util.ArrayList;
  */
 
 public class AddClientAction implements PetClinicAction {
+    //private ConsoleIO consoleIO;
 
-    //Data data;
-    Validator validator = new Validator();
-
-    //public AddClientAction() {
-        //this.data = data;
-        //Validator validator = new Validator();
-    //}
-
-   // public AddClientAction() {
-   // }
 
     /**
      * Declare iterable variable for generate id for clients
@@ -41,13 +31,10 @@ public class AddClientAction implements PetClinicAction {
      * @return int key
      */
     @Override
-    public void exe(Data data){
-
-
-        final String name = validator.getString(" Enter the name of client: ");
+    public void exe(Data data, ConsoleIO consoleIO){
+        final String name = consoleIO.input_read(" Enter the name of client: ");
         Client client = new Client(iterable_id++, name, new ArrayList<>());
         data.clients.add(client);
-
     }
 
     /**

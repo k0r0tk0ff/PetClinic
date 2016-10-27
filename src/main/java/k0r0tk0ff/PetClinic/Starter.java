@@ -3,8 +3,9 @@ package k0r0tk0ff.PetClinic;
 import k0r0tk0ff.PetClinic.Actions.AddClientAction;
 import k0r0tk0ff.PetClinic.Actions.ShowClientsAction;
 import k0r0tk0ff.PetClinic.Data.Data;
+import k0r0tk0ff.PetClinic.IO.Checker;
 import k0r0tk0ff.PetClinic.IO.ConsoleIO;
-import k0r0tk0ff.PetClinic.IO.Validator;
+
 
 
 import java.util.Scanner;
@@ -19,19 +20,18 @@ import java.util.Scanner;
 
 public class Starter {
 
-
     public static void main(String[] arg){
 
         Data data = new Data();
-        Validator validator = new Validator();
+        ConsoleIO consoleIO = new ConsoleIO(new Scanner(System.in));
+        Checker checker = new Checker();
 
-        //System.out.println(" Press any key ");
-        MainMenu mainmenu = new MainMenu(data, validator);
+        MainMenu mainmenu = new MainMenu(data, consoleIO, checker);
+
 
         mainmenu.loadAction(new AddClientAction());
         mainmenu.loadAction(new ShowClientsAction());
 
         mainmenu.runMainMenu();
-
     }
 }

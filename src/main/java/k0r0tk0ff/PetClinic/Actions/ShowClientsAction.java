@@ -2,7 +2,8 @@ package k0r0tk0ff.PetClinic.Actions;
 
 import k0r0tk0ff.PetClinic.Client;
 import k0r0tk0ff.PetClinic.Data.Data;
-import k0r0tk0ff.PetClinic.IO.Validator;
+import k0r0tk0ff.PetClinic.IO.ConsoleIO;
+
 
 /**
  * Class need for show clients from data storage
@@ -21,7 +22,7 @@ public class ShowClientsAction implements PetClinicAction {
      * Show clients in data storage
      */
     @Override
-    public void exe(Data data){
+    public void exe(Data data, ConsoleIO consoleIO){
 
         /**
          * Show clients

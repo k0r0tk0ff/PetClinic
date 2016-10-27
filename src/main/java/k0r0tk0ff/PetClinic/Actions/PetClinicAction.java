@@ -1,7 +1,8 @@
 package k0r0tk0ff.PetClinic.Actions;
 
 import k0r0tk0ff.PetClinic.Data.Data;
-import k0r0tk0ff.PetClinic.IO.Validator;
+import k0r0tk0ff.PetClinic.IO.ConsoleIO;
+
 
 /**
  * Interface describe an action with client and his pets
@@ -13,6 +14,6 @@ import k0r0tk0ff.PetClinic.IO.Validator;
 
 public interface PetClinicAction {
     public void intro();
-    public void exe(Data data);
+    public void exe(Data data, ConsoleIO consoleIO);
     public int key();
 }
