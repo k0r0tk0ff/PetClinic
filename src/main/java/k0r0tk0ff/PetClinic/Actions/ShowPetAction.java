@@ -14,8 +14,8 @@ import k0r0tk0ff.PetClinic.IO.ConsoleIO;
 public class ShowPetAction implements PetClinicAction {
 
     /**
-     * Main method for AddPetAction
-     * add a new pet to internal client storage
+     * Main method for ShowPetAction
+     * Show pets from internal client storage
      * @since 09.11.2016
      *
      * @return int key
@@ -35,11 +35,11 @@ public class ShowPetAction implements PetClinicAction {
 
     /**
      * Text output from console, describe what key
-     * we can push for do this action AddClientAction
+     * we can push for do this action ShowPetAction
      * @since 09.11.2016
      * @version 1.0
      *
-     * @return text from console "Add a new client - 1"
+     * @return text from console "Show a client's pets - 6"
      */
     @Override
     public void intro(){
@@ -48,7 +48,7 @@ public class ShowPetAction implements PetClinicAction {
 
     /**
      * Key for this action
-     * need for bind "4" from console input and AddClientAction
+     * need for bind "6" from console input and ShowPetAction
      * @since 09.11.2016
      * @version 1.0
      *

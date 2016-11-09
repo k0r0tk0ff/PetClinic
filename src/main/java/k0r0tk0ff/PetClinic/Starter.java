@@ -33,6 +33,8 @@ public class Starter {
         mainmenu.loadAction(new DelClientAction());
         mainmenu.loadAction(new AddPetAction());
         mainmenu.loadAction(new ShowPetAction());
+        mainmenu.loadAction(new DelPetAction());
+
 
 
 

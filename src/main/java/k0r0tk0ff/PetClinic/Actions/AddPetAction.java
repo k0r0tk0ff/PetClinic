@@ -1,11 +1,10 @@
 package k0r0tk0ff.PetClinic.Actions;
 
-import k0r0tk0ff.PetClinic.Client;
 import k0r0tk0ff.PetClinic.Data.Data;
 import k0r0tk0ff.PetClinic.IO.ConsoleIO;
 
 /**
- * Class describe add client to data storage
+ * Class describe add a new pet to internal client storage
  * @author k0r0tk0ff
  * @author peterarsentev
  * @since 09.11.2016
@@ -35,11 +34,11 @@ public class AddPetAction implements PetClinicAction {
 
     /**
      * Text output from console, describe what key
-     * we can push for do this action AddClientAction
+     * we can push for do this action AddPetAction
      * @since 09.11.2016
      * @version 1.0
      *
-     * @return text from console "Add a new client - 1"
+     * @return text from console "Add a new client - 4"
      */
     @Override
     public void intro(){

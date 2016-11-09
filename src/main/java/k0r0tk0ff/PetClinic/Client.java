@@ -14,6 +14,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class Client {
     String name;
     int id;
+    int getPetIdReturn;
+    boolean existPetVariable = false;
     CopyOnWriteArrayList<String> petArrayList;
 
     public Client(int id, final String name, CopyOnWriteArrayList<String> petArrayList){
@@ -26,9 +28,27 @@ public class Client {
         return id;
     }
 
+    public boolean existPet(final String petNick) {
+        for (int j = 0; j < this.petArrayList.size(); j++) {
+            if (petNick.equals(this.petArrayList.get(j))) {
+                existPetVariable = true;
+            }
+        }
+        return existPetVariable;
+    }
+    public int getPetId (final String petNick){
+        for(int j = 0; j < this.petArrayList.size(); j++){
+            if(petNick.equals(this.petArrayList.get(j))){
+                getPetIdReturn = j;
+            }
+        }
+        return getPetIdReturn;
+    }
+
     public CopyOnWriteArrayList<String> getPetArrayList(){
         return this.petArrayList;
     }
+
 
 
     public String getClientName(){
