@@ -23,7 +23,6 @@ public class MainMenu {
     private Data data;
     private Checker checker;
 
-
     public MainMenu(Data data, ConsoleIO consoleIO, Checker checker) {
         this.data = data;
         this.consoleIO = consoleIO;
@@ -64,29 +63,12 @@ public class MainMenu {
             //input_key = this.checker.getInt(this.consoleIO.input_read(" Enter int value:"));
             //System.out.println(input_key);
 
-            int enter_from_keyboard = checker.getInt(consoleIO.input_read(" Enter an action : "));
-
+            int input_key = checker.getInt(consoleIO.input_read(" Enter an action : "));
             for (Map.Entry<Integer, PetClinicAction> entries : data.actions.entrySet()) {
-                if (entries.getKey().equals(enter_from_keyboard)){
+                if (entries.getKey().equals(input_key)){
                               entries.getValue().exe(this.data, this.consoleIO);
                    }
             }
-
-
-
-            //Show the loaded actions
-            //for (Map.Entry<Integer, PetClinicAction> entries : data.actions.entrySet()) {
-            //   System.out.println(entries.getKey());
-            //}
-
-            //input_string = this.consoleIO.input_read(" Enter something");
-            //System.out.println(input_string);
-
-            //input_string = this.consoleIO.input_read(" Enter something");
-            //System.out.println(input_string);
-
-
-
         } while(this.checker.compare("y", consoleIO));
     }
 }

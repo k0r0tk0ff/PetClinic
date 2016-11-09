@@ -7,6 +7,7 @@ import k0r0tk0ff.PetClinic.Actions.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Interface for console input from keyboard
@@ -18,8 +19,10 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class Data implements I_DataModel {
 
-    public ConcurrentHashMap<Integer, Client> clients = new ConcurrentHashMap();
+    public CopyOnWriteArrayList<Client> clients = new CopyOnWriteArrayList<>();
 
-    public HashMap<Integer, PetClinicAction> actions = new HashMap<>();
+    public ConcurrentHashMap<Integer, PetClinicAction> actions = new ConcurrentHashMap<>();
+
+
 
 }

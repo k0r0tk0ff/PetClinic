@@ -1,10 +1,9 @@
 package k0r0tk0ff.PetClinic.Actions;
 
-import k0r0tk0ff.PetClinic.Client;
 import k0r0tk0ff.PetClinic.Data.Data;
 import k0r0tk0ff.PetClinic.IO.ConsoleIO;
 
-import java.util.ArrayList;
+import java.util.Map;
 
 
 /**
@@ -16,7 +15,8 @@ import java.util.ArrayList;
  */
 public class DelClientAction implements PetClinicAction {
 
-        /**
+
+         /**
          * Main method for DelClientAction
          * add a new client to data storage
          * @since 15.10.2016
@@ -24,22 +24,13 @@ public class DelClientAction implements PetClinicAction {
          */
         @Override
         public void exe(Data data, ConsoleIO consoleIO){
-            int success_exit = 0;
-            do {
-                final String entered_name = consoleIO.input_read(" Enter the name of client: ");
-                for (Client client : data.clients) {
-                    if (client.getClientName().equals(entered_name)) {
-                        data.clients.remove(client.getClientId());
-                        success_exit = 1;
-                    } else {
-                        System.out.println(" Client does not exist. Try again");
-                        System.out.println(" List of clients: - ");
-                            for (Client iterable : data.clients) {
-                                System.out.println(iterable.getClientName());
-                            }
-                    }
+            final String name = consoleIO.input_read(" Enter the name of client: ");
+            for ( int i = 0; i < data.clients.size(); i++) {
+                if(data.clients.get(i).getClientName().equals(name)){
+                    data.clients.remove(i);
                 }
-            } while (success_exit == 0);
+            }
+
         }
 
         /**

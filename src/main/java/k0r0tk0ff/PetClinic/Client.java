@@ -1,8 +1,6 @@
 package k0r0tk0ff.PetClinic;
 
 import java.util.ArrayList;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Class describe a customer from petclinic
@@ -17,19 +15,18 @@ public class Client {
     int id;
     ArrayList<String> arrayList;
 
-    public Client(final String name, ArrayList<String> arrayList){
+    public Client(int id, final String name, ArrayList<String> arrayList){
+        this.id = id;
         this.name = name;
         this.arrayList = arrayList;
     }
 
-    public int getClientId (ConcurrentHashMap<Integer, Client> clients){
+    public Client(int id, final String name){
+        this.id = id;
+        this.name = name;
+    }
 
-        clients.keySet()
-        for (Map.Entry<Integer, Client> entry: ConcurrentHashMap.entrySet())
-            System.out.println(entry.getKey() + " = " + entry.getValue());
-
-
-
+    public int getClientId (){
         return id;
     }
 

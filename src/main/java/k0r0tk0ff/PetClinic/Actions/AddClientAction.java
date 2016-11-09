@@ -33,14 +33,14 @@ public class AddClientAction implements PetClinicAction {
     @Override
     public void exe(Data data, ConsoleIO consoleIO){
         final String name = consoleIO.input_read(" Enter the name of client: ");
-        Client client = new Client(name, new ArrayList<>());
-        data.clients.put(iterable_id++, client);
+        Client client = new Client(iterable_id++, name, new ArrayList<>());
+        data.clients.add(client);
     }
 
     /**
      * Text output from console, describe what key
      * we can push for do this action AddClientAction
-     * @since 27.10.2016
+     * @since 14.10.2016
      * @version 1.0
      *
      * @return text from console "Add a new client - 1"
@@ -53,7 +53,7 @@ public class AddClientAction implements PetClinicAction {
     /**
      * Key for this action
      * need for bind "1" from console input and AddClientAction
-     * @since 27.10.2016
+     * @since 14.10.2016
      * @version 1.0
      *
      * @return int key
