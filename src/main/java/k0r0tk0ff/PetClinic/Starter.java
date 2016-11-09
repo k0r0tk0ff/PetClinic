@@ -1,8 +1,6 @@
 package k0r0tk0ff.PetClinic;
 
-import k0r0tk0ff.PetClinic.Actions.AddClientAction;
-import k0r0tk0ff.PetClinic.Actions.ShowClientsAction;
-import k0r0tk0ff.PetClinic.Actions.DelClientAction;
+import k0r0tk0ff.PetClinic.Actions.*;
 import k0r0tk0ff.PetClinic.Data.Data;
 import k0r0tk0ff.PetClinic.IO.Checker;
 import k0r0tk0ff.PetClinic.IO.ConsoleIO;
@@ -33,6 +31,12 @@ public class Starter {
         mainmenu.loadAction(new AddClientAction());
         mainmenu.loadAction(new ShowClientsAction());
         mainmenu.loadAction(new DelClientAction());
+        mainmenu.loadAction(new AddPetAction());
+        mainmenu.loadAction(new ShowPetAction());
+
+
+
+
 
         mainmenu.runMainMenu();
     }

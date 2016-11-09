@@ -1,6 +1,7 @@
 package k0r0tk0ff.PetClinic;
 
 import java.util.ArrayList;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Class describe a customer from petclinic
@@ -13,22 +14,22 @@ import java.util.ArrayList;
 public class Client {
     String name;
     int id;
-    ArrayList<String> arrayList;
+    CopyOnWriteArrayList<String> petArrayList;
 
-    public Client(int id, final String name, ArrayList<String> arrayList){
+    public Client(int id, final String name, CopyOnWriteArrayList<String> petArrayList){
         this.id = id;
         this.name = name;
-        this.arrayList = arrayList;
-    }
-
-    public Client(int id, final String name){
-        this.id = id;
-        this.name = name;
+        this.petArrayList = petArrayList;
     }
 
     public int getClientId (){
         return id;
     }
+
+    public CopyOnWriteArrayList<String> getPetArrayList(){
+        return this.petArrayList;
+    }
+
 
     public String getClientName(){
         return name;

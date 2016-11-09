@@ -22,7 +22,4 @@ public class Data implements I_DataModel {
     public CopyOnWriteArrayList<Client> clients = new CopyOnWriteArrayList<>();
 
     public ConcurrentHashMap<Integer, PetClinicAction> actions = new ConcurrentHashMap<>();
-
-
-
 }
