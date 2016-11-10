@@ -32,6 +32,14 @@ public class Client {
         this.name = new_name;
     }
 
+    public void editPetNick (final String petNick, final String new_Nick){
+        for (int j = 0; j < this.petArrayList.size(); j++) {
+            if (petNick.equals(this.petArrayList.get(j))) {
+                petArrayList.set(j, new_Nick);
+            }
+        }
+    }
+
     public boolean existPet(final String petNick) {
         for (int j = 0; j < this.petArrayList.size(); j++) {
             if (petNick.equals(this.petArrayList.get(j))) {

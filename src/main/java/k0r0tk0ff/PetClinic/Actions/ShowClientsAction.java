@@ -32,7 +32,6 @@ public class ShowClientsAction implements PetClinicAction {
         for (Client client : data.clients) {
             System.out.println(client.getClientName());
         }
-
     }
 
     /**
