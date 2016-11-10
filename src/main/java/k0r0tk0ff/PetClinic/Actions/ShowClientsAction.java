@@ -27,6 +27,8 @@ public class ShowClientsAction implements PetClinicAction {
         /**
          * Show clients
          */
+
+        System.out.println("\n Show the petclinic`s clients: \n");
         for (Client client : data.clients) {
             System.out.println(client.getClientName());
         }

@@ -34,10 +34,7 @@ public class Starter {
         mainmenu.loadAction(new AddPetAction());
         mainmenu.loadAction(new ShowPetAction());
         mainmenu.loadAction(new DelPetAction());
-
-
-
-
+        mainmenu.loadAction(new EditClientAction());
 
 
         mainmenu.runMainMenu();

@@ -28,6 +28,10 @@ public class Client {
         return id;
     }
 
+    public void setName (final String new_name){
+        this.name = new_name;
+    }
+
     public boolean existPet(final String petNick) {
         for (int j = 0; j < this.petArrayList.size(); j++) {
             if (petNick.equals(this.petArrayList.get(j))) {

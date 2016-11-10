@@ -78,7 +78,7 @@ public class Checker{
      */
     public boolean compare(final String etalon, final ConsoleIO consoleIO){
 
-        if (etalon.equals(consoleIO.input_read("Try again? (y)"))) return true;
+        if (etalon.equals(consoleIO.input_read("\n Try again? (y)"))) return true;
         else return false;
     }
 }
