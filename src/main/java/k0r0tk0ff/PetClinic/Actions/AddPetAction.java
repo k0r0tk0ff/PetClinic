@@ -26,9 +26,10 @@ public class AddPetAction implements PetClinicAction {
         for ( int i = 0; i < data.clients.size(); i++) {
             if(data.clients.get(i).getClientName().equals(name)){
                 final String petName = consoleIO.input_read(" Enter the nick of pet: ");
-                data.clients.get(i).getPetArrayList().add(petName);
-            }
-            else { System.out.println(" Client not found \n");}
+                data.clients.get(i).getPetArrayList().add(petName); }
+                else { System.out.println(" Client not found \n");}
+
+
         }
     }
 
