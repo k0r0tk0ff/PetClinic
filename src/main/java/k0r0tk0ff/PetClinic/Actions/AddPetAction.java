@@ -13,6 +13,9 @@ import k0r0tk0ff.PetClinic.IO.ConsoleIO;
 
 public class AddPetAction implements PetClinicAction {
 
+    private String found_client = "\n Client not found ";
+    private int success_exit = 0;
+
     /**
      * Main method for AddPetAction
      * add a new pet to internal client storage
@@ -22,15 +25,34 @@ public class AddPetAction implements PetClinicAction {
      */
     @Override
     public void exe(Data data, ConsoleIO consoleIO){
-        final String name = consoleIO.input_read(" Enter the name of client: ");
-        for ( int i = 0; i < data.clients.size(); i++) {
-            if(data.clients.get(i).getClientName().equals(name)){
-                final String petName = consoleIO.input_read(" Enter the nick of pet: ");
-                data.clients.get(i).getPetArrayList().add(petName); }
-                else { System.out.println(" Client not found \n");}
+        do {
+            final String name = consoleIO.input_read(" Enter the name of client: ");
+            for (int i = 0; i < data.clients.size(); i++) {
+                if (data.clients.get(i).getClientName().equals(name)) {
+                    found_client = "\n Add a pet to Client" + name;
+                    final String petName = consoleIO.input_read("\n Enter the nick of pet: ");
+                    data.clients.get(i).getPetArrayList().add(petName);
+                }
+                success_exit = 1;
+            }
 
+            /**
+             * If client is not exist, show list of clients
+             */
+            System.out.println(found_client + "\n");
+            if (found_client.equals("\n Client not found ")) {
+                System.out.println(" The clients: \n");
+                data.actions.get(3).exe(data, consoleIO);
 
-        }
+                /**
+                 * If client is not exist, ask to create him
+                 */
+                final String answer = consoleIO.input_read("\n Add a new client? (y) ");
+                    if(answer.equals("y")){
+                        data.actions.get(1).exe(data, consoleIO);
+                    } else { success_exit = 1;}
+            }
+        }while(success_exit == 0);
     }
 
     /**

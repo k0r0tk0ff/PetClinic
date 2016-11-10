@@ -13,6 +13,8 @@ import k0r0tk0ff.PetClinic.IO.ConsoleIO;
 
 public class ShowPetAction implements PetClinicAction {
 
+    private String found_client = "\n Client not found \n";
+
     /**
      * Main method for ShowPetAction
      * Show pets from internal client storage
@@ -25,12 +27,13 @@ public class ShowPetAction implements PetClinicAction {
         final String name = consoleIO.input_read(" Enter the name of client: ");
         for ( int i = 0; i < data.clients.size(); i++) {
             if(data.clients.get(i).getClientName().equals(name)){
+                found_client = "\n found the Client"+name;
                 for (String pet: data.clients.get(i).getPetArrayList()) {
                     System.out.println(pet);
                 }
             }
-            else { System.out.println(" Client not fount \n");}
         }
+        System.out.println(found_client+"\n");
     }
 
     /**

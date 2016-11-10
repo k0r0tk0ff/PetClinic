@@ -13,7 +13,7 @@ import k0r0tk0ff.PetClinic.IO.ConsoleIO;
 
 public class DelPetAction implements PetClinicAction {
 
-    int success_exit = 0;
+    private int success_exit = 0;
     /**
      * Main method for DelPetAction
      * del a pet from internal client storage

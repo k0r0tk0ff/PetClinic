@@ -15,7 +15,7 @@ import java.util.Map;
  */
 public class DelClientAction implements PetClinicAction {
 
-
+    private String found_client = "\n Client not found \n";
          /**
          * Main method for DelClientAction
          * add a new client to data storage
@@ -27,10 +27,11 @@ public class DelClientAction implements PetClinicAction {
             final String name = consoleIO.input_read(" Enter the name of client: ");
             for ( int i = 0; i < data.clients.size(); i++) {
                 if(data.clients.get(i).getClientName().equals(name)){
+                    found_client = "\n found the Client"+name;
                     data.clients.remove(i);
                 }
             }
-
+            System.out.println(found_client+"\n");
         }
 
         /**
