@@ -60,7 +60,7 @@ public class MainMenu {
             }
         */
 
-            int input_key = checker.getInt(consoleIO.input_read(" Enter an action : "));
+            int input_key = checker.getInt(this.consoleIO);
             for (Map.Entry<Integer, PetClinicAction> entries : data.actions.entrySet()) {
                 if (entries.getKey().equals(input_key)){
                               entries.getValue().exe(this.data, this.consoleIO);

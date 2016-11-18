@@ -47,7 +47,7 @@ public class Checker{
      * @param  input_string (String variable from console)
      * @return return_int_value
      */
-    public int getInt(String input_string){
+    public int getInt(ConsoleIO consoleIO){
 
         /**
          * Initializate local field in methods body,
@@ -60,6 +60,7 @@ public class Checker{
 
         while (success_input == 0) {
             try{
+                String input_string = consoleIO.input_read(" Enter an action : ");
                 return_int_value = Integer.parseInt(input_string);
                 success_input = 1;
             }catch (NumberFormatException error){
@@ -78,7 +79,7 @@ public class Checker{
      */
     public boolean compare(final String etalon, final ConsoleIO consoleIO){
 
-        if (etalon.equals(consoleIO.input_read("\n Try again? (y)"))) return true;
+        if (etalon.equals(consoleIO.input_read("\n Work further? (y)"))) return true;
         else return false;
     }
 }
