@@ -28,8 +28,8 @@ public class FindClientAction implements PetClinicAction {
             final String name_for_found = consoleIO.input_read(" Enter the name of client for find: ");
             for (int i = 0; i < data.clients.size(); i++) {
                  if (data.clients.get(i).getClientName().equals(name_for_found)) {
-                        System.out.println("\n Found Client - " + name_for_found);
-                        success_exit = 1;
+                     System.out.println(String.format("\n Found Client - %s", name_for_found));
+                     success_exit = 1;
                  } else {
 
                      /**
@@ -49,9 +49,7 @@ public class FindClientAction implements PetClinicAction {
      * @since 18.11.2016
      */
     @Override
-    public void intro() {
-        System.out.println(this.key() + " - Find the client");
-    }
+    public void intro(){ System.out.println(String.format("%s - Find the client", this.key())); }
 
     /**
      * Key for this action

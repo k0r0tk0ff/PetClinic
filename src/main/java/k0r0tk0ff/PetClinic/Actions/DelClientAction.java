@@ -27,11 +27,11 @@ public class DelClientAction implements PetClinicAction {
             final String name = consoleIO.input_read(" Enter the name of client: ");
             for ( int i = 0; i < data.clients.size(); i++) {
                 if(data.clients.get(i).getClientName().equals(name)){
-                    found_client = "\n found the Client"+name;
+                    found_client = String.format("found the Client - %s \n",name);
                     data.clients.remove(i);
                 }
             }
-            System.out.println(found_client+"\n");
+            System.out.println(String.format("%s \n",found_client));
         }
 
         /**
@@ -42,9 +42,7 @@ public class DelClientAction implements PetClinicAction {
          * @return text from console "Add a new client - 1"
          */
         @Override
-        public void intro(){
-            System.out.println(this.key()+" - Del the client");
-        }
+        public void intro() { System.out.println(String.format("%s - Del the client", this.key())); }
 
         /**
          * Key for this action

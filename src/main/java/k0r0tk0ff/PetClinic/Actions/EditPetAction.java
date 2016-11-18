@@ -35,7 +35,7 @@ public class EditPetAction implements PetClinicAction {
                     do {
                         final String petNick = consoleIO.input_read("\n Enter the nick of pet: ");
                         if (data.clients.get(i).existPet(petNick)) {
-                            System.out.println("\n found pet - " + found_pet);
+                            System.out.println(String.format("\n found pet - %s", found_pet));
                             found_pet = petNick;
                             final String newPetNick = consoleIO.input_read("\n Enter the new nick of pet: ");
                             data.clients.get(i).editPetNick(petNick, newPetNick);
@@ -71,13 +71,11 @@ public class EditPetAction implements PetClinicAction {
      * @since 10.11.2016
      */
     @Override
-    public void intro() {
-        System.out.println(this.key() + " - Edit the pet");
-    }
+    public void intro(){ System.out.println(String.format("%s - Edit the pet", this.key())); }
 
     /**
      * Key for this action
-     * need for bind "2" from console input and EditPetAction
+     * need for bind "5" from console input and EditPetAction
      *
      * @return int key
      * @since 15.10.2016

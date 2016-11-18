@@ -27,7 +27,7 @@ public class ShowPetAction implements PetClinicAction {
         final String name = consoleIO.input_read(" Enter the name of client: ");
         for ( int i = 0; i < data.clients.size(); i++) {
             if(data.clients.get(i).getClientName().equals(name)){
-                found_client = "\n found the Client"+name;
+                found_client = String.format("\n found the Client - %s", name);
                 for (String pet: data.clients.get(i).getPetArrayList()) {
                     System.out.println(pet);
                 }
@@ -45,9 +45,7 @@ public class ShowPetAction implements PetClinicAction {
      * @return text from console "Show a client's pets - 6"
      */
     @Override
-    public void intro(){
-        System.out.println(this.key()+" - Show a client's pets  ");
-    }
+    public void intro(){ System.out.println(String.format("%s - Show a client's pets", this.key())); }
 
     /**
      * Key for this action

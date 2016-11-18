@@ -28,9 +28,9 @@ public class FindPetAction implements PetClinicAction {
             final String nick_for_find = consoleIO.input_read(" Enter the nick of pet for find: ");
             for (int i = 0; i < data.clients.size(); i++) {
                  if (data.clients.get(i).existPet(nick_for_find)) {
-                        System.out.println("\n found pet - " + nick_for_find);
+                        System.out.println(String.format("\n Founf pet - %s", nick_for_find));
                         found_pet = nick_for_find;
-                        System.out.println("\n Pet`s owner - " + data.clients.get(i).getClientName());
+                        System.out.println(String.format("\n Pet`s owner - %s", data.clients.get(i).getClientName()));
                         success_exit = 1;
                     }
             }
@@ -45,9 +45,7 @@ public class FindPetAction implements PetClinicAction {
      * @since 18.11.2016
      */
     @Override
-    public void intro() {
-        System.out.println(this.key() + " - Find the pet");
-    }
+    public void intro(){ System.out.println(String.format("%s - Find the pet", this.key())); }
 
     /**
      * Key for this action

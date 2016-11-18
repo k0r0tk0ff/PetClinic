@@ -38,9 +38,7 @@ public class EditClientAction implements PetClinicAction {
          * @return text from console "Edit the client - 8"
          */
         @Override
-        public void intro(){
-            System.out.println(this.key()+" - Edit the client");
-        }
+        public void intro(){ System.out.println(String.format("%s - Edit the client", this.key())); }
 
         /**
          * Key for this action

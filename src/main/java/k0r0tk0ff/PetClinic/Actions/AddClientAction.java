@@ -16,8 +16,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 
 public class AddClientAction implements PetClinicAction {
-    //private ConsoleIO consoleIO;
-
 
     /**
      * Declare iterable variable for generate id for clients
@@ -47,9 +45,7 @@ public class AddClientAction implements PetClinicAction {
      * @return text from console "Add a new client - 1"
      */
     @Override
-    public void intro(){
-        System.out.println(this.key()+" - Add a new client ");
-    }
+    public void intro(){ System.out.println(String.format("%s - Add a new client", this.key())); }
 
     /**
      * Key for this action

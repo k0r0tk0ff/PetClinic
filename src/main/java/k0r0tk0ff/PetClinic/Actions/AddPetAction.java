@@ -26,10 +26,12 @@ public class AddPetAction implements PetClinicAction {
     @Override
     public void exe(Data data, ConsoleIO consoleIO){
         do {
+            System.out.println("\n Add a pet to the Client \n");
             final String name = consoleIO.input_read(" Enter the name of client: ");
             for (int i = 0; i < data.clients.size(); i++) {
                 if (data.clients.get(i).getClientName().equals(name)) {
-                    found_client = "\n Add a pet to Client" + name;
+                    found_client = name;
+                    String.format(" Found the client - %s \n", found_client);
                     final String petName = consoleIO.input_read("\n Enter the nick of pet: ");
                     data.clients.get(i).getPetArrayList().add(petName);
                 }
@@ -39,9 +41,7 @@ public class AddPetAction implements PetClinicAction {
             /**
              * If client is not exist, show list of clients
              */
-            System.out.println(found_client + "\n");
             if (found_client.equals("\n Client not found ")) {
-                System.out.println(" The clients: \n");
                 data.actions.get(3).exe(data, consoleIO);
 
                 /**
@@ -61,16 +61,14 @@ public class AddPetAction implements PetClinicAction {
      * @since 09.11.2016
      * @version 1.0
      *
-     * @return text from console "Add a new client - 4"
+     * @return text from console "Add a pet - 4"
      */
     @Override
-    public void intro(){
-        System.out.println(this.key()+" - Add a pet ");
-    }
+    public void intro(){ System.out.println(String.format("%s - Add a pet ", this.key())); }
 
     /**
      * Key for this action
-     * need for bind "4" from console input and AddClientAction
+     * need for bind "4" from console input and AddPetAction
      * @since 09.11.2016
      * @version 1.0
      *

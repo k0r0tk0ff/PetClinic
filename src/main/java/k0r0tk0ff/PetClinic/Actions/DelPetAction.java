@@ -62,12 +62,10 @@ public class DelPetAction implements PetClinicAction {
      * @since 09.11.2016
      * @version 1.0
      *
-     * @return text from console "Add a new client - 4"
+     * @return text from console "Del a pet - 7"
      */
     @Override
-    public void intro(){
-        System.out.println(this.key()+" - Del a pet ");
-    }
+    public void intro(){ System.out.println(String.format("%s - Del a pet", this.key())); }
 
     /**
      * Key for this action
