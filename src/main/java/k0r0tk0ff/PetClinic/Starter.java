@@ -36,6 +36,9 @@ public class Starter {
         mainmenu.loadAction(new DelPetAction());
         mainmenu.loadAction(new EditClientAction());
         mainmenu.loadAction(new EditPetAction());
+        mainmenu.loadAction(new FindPetAction());
+        mainmenu.loadAction(new FindClientAction());
+
 
         mainmenu.runMainMenu();
     }
