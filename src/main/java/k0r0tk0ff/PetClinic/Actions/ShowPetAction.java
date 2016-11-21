@@ -45,7 +45,7 @@ public class ShowPetAction implements PetClinicAction {
      * @return text from console "Show a client's pets - 6"
      */
     @Override
-    public void intro(){ System.out.println(String.format("%s - Show a client's pets", this.key())); }
+    public String intro(){ return " Show a client's pets"; }
 
     /**
      * Key for this action

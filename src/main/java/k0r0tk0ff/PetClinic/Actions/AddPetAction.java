@@ -64,7 +64,7 @@ public class AddPetAction implements PetClinicAction {
      * @return text from console "Add a pet - 4"
      */
     @Override
-    public void intro(){ System.out.println(String.format("%s - Add a pet ", this.key())); }
+    public String intro(){ return " Add a pet "; }
 
     /**
      * Key for this action

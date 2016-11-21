@@ -43,9 +43,9 @@ public class MainMenu {
 
     void runMainMenu(){
 
-        do{
-            showMainMenu();
-            showIntroFromActions();
+        //do{
+        //    showMainMenu();
+        //    showIntroFromActions();
 
 
         /**
@@ -60,11 +60,29 @@ public class MainMenu {
             }
         */
 
-            int input_key = checker.getInt(this.consoleIO);
-            for (Map.Entry<Integer, PetClinicAction> entries : data.actions.entrySet()) {
-                if (entries.getKey().equals(input_key)){
-                              entries.getValue().exe(this.data, this.consoleIO);
-                   }
+        // my version
+        //    int input_key = checker.getInt(this.consoleIO);
+        //    for (Map.Entry<Integer, PetClinicAction> entries : data.actions.entrySet()) {
+        //        if (entries.getKey().equals(input_key)){
+        //                      entries.getValue().exe(this.data, this.consoleIO);
+        //           }
+        //    }
+        //} while(this.checker.compare("y", consoleIO));
+
+        // version of Petr Arsentev
+
+        do {
+            for (Integer key : this.data.actions.keySet()) {
+                System.out.println(
+                    String.format("key = %d  action = %s", key, this.data.actions.get(key).intro())
+                );
+            }
+
+            int enter = checker.getInt(this.consoleIO);
+
+            for (Integer key : this.data.actions.keySet()) {
+                if(enter == this.data.actions.get(key).key()){
+                    this.data.actions.get(key).exe(this.data, this.consoleIO);}
             }
         } while(this.checker.compare("y", consoleIO));
     }

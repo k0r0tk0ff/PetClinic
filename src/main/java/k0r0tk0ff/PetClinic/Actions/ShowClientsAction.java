@@ -43,7 +43,7 @@ public class ShowClientsAction implements PetClinicAction {
      * @return text from console "Add a new client - 3"
      */
     @Override
-    public void intro(){ System.out.println(String.format("%s - Show the clients", this.key())); }
+    public String intro(){ return " Show the clients"; }
 
     /**
      * Key for this action

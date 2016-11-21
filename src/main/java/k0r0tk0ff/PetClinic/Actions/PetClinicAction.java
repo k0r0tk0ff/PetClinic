@@ -13,7 +13,7 @@ import k0r0tk0ff.PetClinic.IO.ConsoleIO;
  */
 
 public interface PetClinicAction {
-    public void intro();
+    public String intro();
     public void exe(Data data, ConsoleIO consoleIO);
     public int key();
 }

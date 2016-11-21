@@ -42,7 +42,7 @@ public class DelClientAction implements PetClinicAction {
          * @return text from console "Add a new client - 1"
          */
         @Override
-        public void intro() { System.out.println(String.format("%s - Del the client", this.key())); }
+        public String intro() { return " Del the client"; }
 
         /**
          * Key for this action

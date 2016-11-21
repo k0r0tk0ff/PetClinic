@@ -65,7 +65,7 @@ public class DelPetAction implements PetClinicAction {
      * @return text from console "Del a pet - 7"
      */
     @Override
-    public void intro(){ System.out.println(String.format("%s - Del a pet", this.key())); }
+    public String intro(){ return " Del a pet"; }
 
     /**
      * Key for this action

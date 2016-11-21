@@ -45,7 +45,7 @@ public class FindPetAction implements PetClinicAction {
      * @since 18.11.2016
      */
     @Override
-    public void intro(){ System.out.println(String.format("%s - Find the pet", this.key())); }
+    public String intro(){ return " Find the pet"; }
 
     /**
      * Key for this action

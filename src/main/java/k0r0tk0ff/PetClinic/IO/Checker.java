@@ -44,7 +44,6 @@ public class Checker{
     /**
      * Method return int value after parsing String input from keyboard
      *
-     * @param  input_string (String variable from console)
      * @return return_int_value
      */
     public int getInt(ConsoleIO consoleIO){

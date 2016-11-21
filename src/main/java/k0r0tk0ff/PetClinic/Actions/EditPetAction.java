@@ -71,7 +71,7 @@ public class EditPetAction implements PetClinicAction {
      * @since 10.11.2016
      */
     @Override
-    public void intro(){ System.out.println(String.format("%s - Edit the pet", this.key())); }
+    public String intro(){ return " Edit the pet"; }
 
     /**
      * Key for this action
