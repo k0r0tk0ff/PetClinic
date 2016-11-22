@@ -29,13 +29,14 @@ public class MainMenu {
         this.checker = checker;
     }
 
-    void showMainMenu(){
-        System.out.print("\n Clinic home pets \n");
-    }
+    // this methods rewrite with Petr Arsentev help
+    //void showMainMenu(){
+    //    System.out.print("\n Clinic home pets \n");
+    //}
 
-    void showIntroFromActions(){
-        this.data.actions.values().forEach(PetClinicAction::intro);
-    }
+    //void showIntroFromActions(){
+    //    this.data.actions.values().forEach(PetClinicAction::intro);
+    //}
 
     void loadAction(final PetClinicAction action){
         this.data.actions.put(action.key(), action);
@@ -78,10 +79,10 @@ public class MainMenu {
                 );
             }
 
-            int enter = checker.getInt(this.consoleIO);
+            int entered_key = checker.getInt(this.consoleIO);
 
             for (Integer key : this.data.actions.keySet()) {
-                if(enter == this.data.actions.get(key).key()){
+                if(entered_key == this.data.actions.get(key).key()){
                     this.data.actions.get(key).exe(this.data, this.consoleIO);}
             }
         } while(this.checker.compare("y", consoleIO));
