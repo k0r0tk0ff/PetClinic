@@ -43,7 +43,9 @@ public class ShowClientsAction implements PetClinicAction {
      * @return text from console "Add a new client - 3"
      */
     @Override
-    public String intro(){ return " Show the clients"; }
+    public String intro() {
+        return " Show the clients";
+    }
 
     /**
      * Key for this action
@@ -51,11 +53,11 @@ public class ShowClientsAction implements PetClinicAction {
      * @since 14.10.2016
      * @version 1.0
      *
-     * @return int key
+     * @return int key.
      */
 
     @Override
-    public int key(){
+    public final int key(){
         return 3;
     }
 }
