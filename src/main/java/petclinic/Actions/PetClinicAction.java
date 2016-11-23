@@ -3,8 +3,7 @@ package petclinic.Actions;
 import petclinic.Data.Data;
 import petclinic.IO.ConsoleIO;
 
-
-/**
+/**.
  * Interface describe an action with client and his pets
  * @author k0r0tk0ff
  * @author peterarsentev
@@ -13,7 +12,24 @@ import petclinic.IO.ConsoleIO;
  */
 
 public interface PetClinicAction {
-    public String intro();
-    public void exe(Data data, ConsoleIO consoleIO);
-    public int key();
+    /**.
+     * intro - information about action
+     * @return - information about action
+     *
+     */
+    String intro();
+
+    /**.
+     * exe - information main method of action
+     *
+     * @param data - our database from concurenthashmap
+     * @param consoleIO - console input
+     */
+    void exe(Data data, ConsoleIO consoleIO);
+
+    /**.
+     * key - for bind to keyboard
+     * @return - int key
+     */
+    int key();
 }
