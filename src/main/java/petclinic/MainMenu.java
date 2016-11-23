@@ -1,21 +1,17 @@
-package k0r0tk0ff.PetClinic;
+package petclinic;
 
-import k0r0tk0ff.PetClinic.Actions.*;
-import k0r0tk0ff.PetClinic.Data.Data;
-import k0r0tk0ff.PetClinic.IO.Checker;
-import k0r0tk0ff.PetClinic.IO.ConsoleIO;
+import petclinic.Actions.*;
+import petclinic.Data.Data;
+import petclinic.IO.Checker;
+import petclinic.IO.ConsoleIO;
 
-import java.util.Map;
-import java.util.Scanner;
-
-
-/**
- * Class describe a MainMenu
- * @author k0r0tk0ff
- * @author peterarsentev
- * @since 14.10.2016
- * @version 1.0
- */
+    /**
+    * Class describe a MainMenu
+    * @author k0r0tk0ff
+    * @author peterarsentev
+    * @since 14.10.2016
+    * @version 1.0
+    */
 
 public class MainMenu {
 

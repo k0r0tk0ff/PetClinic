@@ -2,10 +2,12 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
  
-  <groupId>k0r0tk0ff.PetClinic</groupId>
-  <artifactId>lessons</artifactId>
+  <groupId>k0r0tk0ff.petclinic</groupId>
+  <artifactId>petclinic</artifactId>
   <version>1.0-SNAPSHOT</version>
+  <name>petclinic</name>
   <packaging>jar</packaging>
+  <url>https://github.com/k0r0tk0ff/petclinic</url>
 
   <build>
     <plugins>
@@ -45,7 +47,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>k0r0tk0ff.PetClinic.Starter</mainClass>
+              <mainClass>petclinic.Starter</mainClass>
               <addClasspath>true</addClasspath>
             </manifest>
           </archive>
@@ -53,10 +55,6 @@
       </plugin>
     </plugins>
   </build>
-
-  <name>Maven Quick Start Archetype</name>
-  <url>http://maven.apache.org</url>
- 
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -77,4 +75,20 @@
       <version>1.7.21</version>
     </dependency>
   </dependencies>
+     <reporting>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <version>2.17</version>
+          <reportSets>
+            <reportSet>
+              <reports>
+                <report>checkstyle</report>
+              </reports>
+            </reportSet>
+          </reportSets>
+        </plugin>
+      </plugins>
+    </reporting>
 </project>

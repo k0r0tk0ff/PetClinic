@@ -1,19 +1,17 @@
-package k0r0tk0ff.PetClinic.IO;
+package petclinic.IO;
 
 import java.io.Closeable;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.io.PrintStream;
 import java.util.Scanner;
 
+    /**
+    * Interface for console input from keyboard
+    * @author k0r0tk0ff
+    * @author peterarsentev
+    * @since 15.10.2016
+    * @version 1.1
+    */
 
-/**
- * Interface for console input from keyboard
- * @author k0r0tk0ff
- * @author peterarsentev
- * @since 15.10.2016
- * @version 1.1
- */
 public class ConsoleIO implements IO, Closeable {
 
     private Scanner scanner;

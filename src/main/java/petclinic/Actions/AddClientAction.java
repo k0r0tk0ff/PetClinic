@@ -1,34 +1,32 @@
-package k0r0tk0ff.PetClinic.Actions;
+package petclinic.Actions;
 
-import k0r0tk0ff.PetClinic.Client;
-import k0r0tk0ff.PetClinic.Data.Data;
-import k0r0tk0ff.PetClinic.IO.ConsoleIO;
+import petclinic.Client;
+import petclinic.Data.Data;
+import petclinic.IO.ConsoleIO;
 
-import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
- * Class describe add client to data storage
- * @author k0r0tk0ff
- * @author peterarsentev
- * @since 14.10.2016
- * @version 1.0
+ * Calculate.
+ *
+ * @author Petr Arsentev (parsentev@yandex.ru)
+ * @version $Id$
+ * @since 0.1
  */
-
 public class AddClientAction implements PetClinicAction {
 
-    /**
-     * Declare iterable variable for generate id for clients
-     */
+ /**
+ * Declare iterable variable for generate id for clients
+ */
     private int iterable_id = 0;
 
-    /**
-     * Main method for AddClientAction
-     * add a new client to data storage
-     * @since 14.10.2016
-     *
-     * @return int key
-     */
+ /**
+ * Main method for AddClientAction
+ * add a new client to data storage
+ * @since 14.10.2016
+ *
+ * @return int key
+ */
     @Override
     public void exe(Data data, ConsoleIO consoleIO){
         final String name = consoleIO.input_read(" Enter the name of client: ");

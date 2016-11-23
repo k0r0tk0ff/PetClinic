@@ -1,8 +1,8 @@
-package k0r0tk0ff.PetClinic.Actions;
+package petclinic.Actions;
 
-import k0r0tk0ff.PetClinic.Client;
-import k0r0tk0ff.PetClinic.Data.Data;
-import k0r0tk0ff.PetClinic.IO.ConsoleIO;
+import petclinic.Client;
+import petclinic.Data.Data;
+import petclinic.IO.ConsoleIO;
 
 
 /**

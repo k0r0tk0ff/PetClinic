@@ -1,21 +1,19 @@
-package k0r0tk0ff.PetClinic;
+package petclinic;
 
-import k0r0tk0ff.PetClinic.Actions.*;
-import k0r0tk0ff.PetClinic.Data.Data;
-import k0r0tk0ff.PetClinic.IO.Checker;
-import k0r0tk0ff.PetClinic.IO.ConsoleIO;
-
-
+import petclinic.Actions.*;
+import petclinic.Data.Data;
+import petclinic.IO.Checker;
+import petclinic.IO.ConsoleIO;
 
 import java.util.Scanner;
 
-/**
- * Class for start PetClinic program
- * @author k0r0tk0ff
- * @author peterarsentev
- * @since 17.10.2016
- * @version 1.1
- */
+    /**
+    * Class for start petclinic program
+    * @author k0r0tk0ff
+    * @author peterarsentev
+    * @since 17.10.2016
+    * @version 1.1
+    */
 
 public class Starter {
 
@@ -27,7 +25,6 @@ public class Starter {
 
         MainMenu mainmenu = new MainMenu(data, consoleIO, checker);
 
-
         mainmenu.loadAction(new AddClientAction());
         mainmenu.loadAction(new ShowClientsAction());
         mainmenu.loadAction(new DelClientAction());
@@ -38,7 +35,6 @@ public class Starter {
         mainmenu.loadAction(new EditPetAction());
         mainmenu.loadAction(new FindPetAction());
         mainmenu.loadAction(new FindClientAction());
-
 
         mainmenu.runMainMenu();
     }

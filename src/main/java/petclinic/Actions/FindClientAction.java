@@ -1,8 +1,7 @@
-package k0r0tk0ff.PetClinic.Actions;
+package petclinic.Actions;
 
-import k0r0tk0ff.PetClinic.Data.Data;
-import k0r0tk0ff.PetClinic.IO.ConsoleIO;
-
+import petclinic.Data.Data;
+import petclinic.IO.ConsoleIO;
 
 /**
  * Class describe find client`s pet to data storage
@@ -11,6 +10,7 @@ import k0r0tk0ff.PetClinic.IO.ConsoleIO;
  * @since 18.11.2016
  * @version 1.0
  */
+
 public class FindClientAction implements PetClinicAction {
 
     private int success_exit = 0;

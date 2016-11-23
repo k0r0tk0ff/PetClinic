@@ -1,10 +1,7 @@
-package k0r0tk0ff.PetClinic.Actions;
+package petclinic.Actions;
 
-import k0r0tk0ff.PetClinic.Data.Data;
-import k0r0tk0ff.PetClinic.IO.ConsoleIO;
-
-import java.util.Map;
-
+import petclinic.Data.Data;
+import petclinic.IO.ConsoleIO;
 
 /**
  * Class describe del client to data storage
@@ -13,6 +10,7 @@ import java.util.Map;
  * @since 14.10.2016
  * @version 1.0
  */
+
 public class DelClientAction implements PetClinicAction {
 
     private String found_client = "\n Client not found \n";

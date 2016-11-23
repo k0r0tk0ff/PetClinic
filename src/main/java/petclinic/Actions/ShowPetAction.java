@@ -1,7 +1,7 @@
-package k0r0tk0ff.PetClinic.Actions;
+package petclinic.Actions;
 
-import k0r0tk0ff.PetClinic.Data.Data;
-import k0r0tk0ff.PetClinic.IO.ConsoleIO;
+import petclinic.Data.Data;
+import petclinic.IO.ConsoleIO;
 
 /**
  * Class describe add client to data storage

@@ -1,15 +1,14 @@
-package k0r0tk0ff.PetClinic;
+package petclinic;
 
-import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/**
- * Class describe a customer from petclinic
- * @author k0r0tk0ff
- * @author peterarsentev
- * @since 14.10.2016
- * @version 1.0
- */
+    /**
+    * Class describe a customer from petclinic
+    * @author k0r0tk0ff
+    * @author peterarsentev
+    * @since 14.10.2016
+    * @version 1.0
+    */
 
 public class Client {
     String name;

@@ -1,8 +1,7 @@
-package k0r0tk0ff.PetClinic.Actions;
+package petclinic.Actions;
 
-import k0r0tk0ff.PetClinic.Data.Data;
-import k0r0tk0ff.PetClinic.IO.ConsoleIO;
-
+import petclinic.Data.Data;
+import petclinic.IO.ConsoleIO;
 
 /**
  * Class describe del client to data storage
@@ -11,6 +10,7 @@ import k0r0tk0ff.PetClinic.IO.ConsoleIO;
  * @since 10.11.2016
  * @version 1.0
  */
+
 public class EditPetAction implements PetClinicAction {
 
     private int success_exit = 0;

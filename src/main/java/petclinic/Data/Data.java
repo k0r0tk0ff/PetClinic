@@ -1,21 +1,19 @@
-package k0r0tk0ff.PetClinic.Data;
+package petclinic.Data;
 
-import k0r0tk0ff.PetClinic.Client;
+import petclinic.Client;
 
-import k0r0tk0ff.PetClinic.Actions.*;
+import petclinic.Actions.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/**
- * Interface for console input from keyboard
- * @author k0r0tk0ff
- * @author peterarsentev
- * @since 15.10.2016
- * @version 1.0
- */
+    /**
+    * Interface for console input from keyboard
+    * @author k0r0tk0ff
+    * @author peterarsentev
+    * @since 15.10.2016
+    * @version 1.0
+    */
 
 public class Data implements I_DataModel {
 

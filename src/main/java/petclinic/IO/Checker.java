@@ -1,16 +1,13 @@
-package k0r0tk0ff.PetClinic.IO;
+package petclinic.IO;
 
-import java.io.Closeable;
-import java.io.IOException;
-import java.util.Scanner;
+    /**
+    * Validator of input data from console input
+    * @author k0r0tk0ff
+    * @author peterarsentev
+    * @since 15.10.2016
+    * @version 1.2
+    */
 
-/**
- * Validator of input data from console input
- * @author k0r0tk0ff
- * @author peterarsentev
- * @since 15.10.2016
- * @version 1.2
- */
 public class Checker{
 
     /**
