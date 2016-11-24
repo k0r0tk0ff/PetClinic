@@ -3,8 +3,7 @@ package petclinic.Actions;
 import petclinic.Data.Data;
 import petclinic.IO.ConsoleIO;
 
-
-/**
+/**.
  * Class describe find client`s pet to data storage
  * @author k0r0tk0ff
  * @author peterarsentev
@@ -14,51 +13,68 @@ import petclinic.IO.ConsoleIO;
 
 public class FindPetAction implements PetClinicAction {
 
-    private int success_exit = 0;
-    private String found_pet = "\n Pet not found \n";
+    /**.
+     * Declare variable keyFindClientAction
+     * - return key (8) for action FindPetAction.
+     */
+    private final int keyFindPetAction = 8;
+    /**.
+     * Declare variable foundPet- status of pet. Found or not.
+     */
+    private String foundPet = "\n Pet not found \n";
+    /**.
+     * Declare variable successExit - default value of if.
+     */
+    private int successExit = 0;
 
-    /**
+    /**.
      * Main method for FindPetAction
      * rename the client`s pet
      *
      * @since 18.11.2016
      */
     @Override
-    public void exe(Data data, ConsoleIO consoleIO) {
+    public final void exe(final Data data, final ConsoleIO consoleIO) {
         do {
-            final String nick_for_find = consoleIO.input_read(" Enter the nick of pet for find: ");
+            final String nickForFind = consoleIO.inputRead(
+                    " Enter the nick of pet for find: ");
             for (int i = 0; i < data.clients.size(); i++) {
-                 if (data.clients.get(i).existPet(nick_for_find)) {
-                        System.out.println(String.format("\n Founf pet - %s", nick_for_find));
-                        found_pet = nick_for_find;
-                        System.out.println(String.format("\n Pet`s owner - %s", data.clients.get(i).getClientName()));
-                        success_exit = 1;
+                 if (data.clients.get(i).existPet(nickForFind)) {
+                        System.out.println(String.format(
+                                "\n Founf pet - %s", nickForFind));
+                        foundPet = nickForFind;
+                        System.out.println(String.format(
+                                "\n Pet`s owner - %s",
+                                data.clients.get(i).getClientName()));
+                        successExit = 1;
                     }
             }
-        } while (success_exit == 0);
+        } while (successExit == 0);
     }
 
-    /**
+    /**.
      * Text output from console, describe what key
      * we can edit the client do this action EditPetAction
      *
      * @return text from console "Find the pet - 8"
-     * @since 18.11.2016
+     * @since 18.11.2016.
      */
     @Override
-    public String intro(){ return " Find the pet"; }
+    public final String intro() {
+        return " Find the pet";
+    }
 
-    /**
+    /**.
      * Key for this action
      * need for bind "8" from console input and FindPetAction
      *
      * @return int key
-     * @since 18.11.2016
+     * @since 18.11.2016.
      */
 
     @Override
-    public int key() {
-        return 8;
+    public final int key() {
+        return keyFindPetAction;
     }
 }
 

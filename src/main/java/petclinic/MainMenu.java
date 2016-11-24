@@ -5,7 +5,9 @@ import petclinic.Data.Data;
 import petclinic.IO.Checker;
 import petclinic.IO.ConsoleIO;
 
-    /**
+import java.util.Scanner;
+
+/**.
     * Class describe a MainMenu
     * @author k0r0tk0ff
     * @author peterarsentev
@@ -15,72 +17,82 @@ import petclinic.IO.ConsoleIO;
 
 public class MainMenu {
 
-    private ConsoleIO consoleIO;
+    /**.
+     * Declare main variables:
+     * ConsoleIO consoleIO - input/output from console
+     */
+    private ConsoleIO consoleIO = new ConsoleIO(new Scanner(System.in));
+
+    /**.
+    * Declare main variables:
+    * Data data - data storage.
+    */
     private Data data;
+
+    /**.
+    * Declare main variables:
+    * Checker checker - validator for input.
+    */
     private Checker checker;
 
-    public MainMenu(Data data, ConsoleIO consoleIO, Checker checker) {
+    /**.
+    * Declare constructor.
+     * @param data - storage
+     * @param consoleIO - work with console
+     * @param checker - validator.
+    */
+    public MainMenu(final Data data, final ConsoleIO consoleIO,
+                    final Checker checker) {
         this.data = data;
         this.consoleIO = consoleIO;
         this.checker = checker;
     }
 
-    // this methods rewrite with Petr Arsentev help
-    //void showMainMenu(){
-    //    System.out.print("\n Clinic home pets \n");
-    //}
-
-    //void showIntroFromActions(){
-    //    this.data.actions.values().forEach(PetClinicAction::intro);
-    //}
-
-    void loadAction(final PetClinicAction action){
+    /**.
+    * Declare method for create an object,
+    * for further work.
+    * @param action - method for action.
+    */
+    final void loadAction(final PetClinicAction action) {
         this.data.actions.put(action.key(), action);
     }
 
-    void runMainMenu(){
-
-        //do{
-        //    showMainMenu();
-        //    showIntroFromActions();
-
+        /**.
+         * Declare main method of project.
+         */
+    final void runMainMenu() {
 
         /**
-            Iterator<HashMap.Entry<Integer, PetClinicAction>> entries = data.actions.entrySet().iterator();
+            Iterator<HashMap.Entry<Integer, PetClinicAction>> entries = data.
+         actions.entrySet().iterator();
             while (entries.hasNext()){
-                HashMap.Entry<Integer, PetClinicAction> entry = entries.next();
+                HashMap.Entry<Integer, PetClinicAction> entry =
+         entries.next();
                 System.out.println("Key = " + entry.getKey() + ", Value = " +
                         entry.getValue());
-                if (entry.getKey() == checker.getInt(consoleIO.input_read(" Enter an action : "))){
+                if (entry.getKey() == checker.getInt(consoleIO.inputRead(
+         " Enter an action : "))){
                     entry.getValue().exe(data);
                 }
             }
         */
 
-        // my version
-        //    int input_key = checker.getInt(this.consoleIO);
-        //    for (Map.Entry<Integer, PetClinicAction> entries : data.actions.entrySet()) {
-        //        if (entries.getKey().equals(input_key)){
-        //                      entries.getValue().exe(this.data, this.consoleIO);
-        //           }
-        //    }
-        //} while(this.checker.compare("y", consoleIO));
-
-        // version of Petr Arsentev
-
         do {
             for (Integer key : this.data.actions.keySet()) {
                 System.out.println(
-                    String.format("key = %d  action = %s", key, this.data.actions.get(key).intro())
+                    String.format("key = %d  action = %s",
+                            key, this.data.actions.get(key).intro())
                 );
             }
 
-            int entered_key = checker.getInt(this.consoleIO);
+            int enteredKey = checker.getInt(this.consoleIO);
 
             for (Integer key : this.data.actions.keySet()) {
-                if(entered_key == this.data.actions.get(key).key()){
-                    this.data.actions.get(key).exe(this.data, this.consoleIO);}
+                if (enteredKey == this.data.actions.get(key).key()) {
+                    this.data.actions.get(key).
+                            exe(this.data, this.consoleIO);
+                }
             }
-        } while(this.checker.compare("y", consoleIO));
+        } while (this.checker.compare("y", consoleIO));
     }
 }

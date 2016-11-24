@@ -46,13 +46,13 @@ public class AddPetAction implements PetClinicAction {
     public final void exe(final Data data, final ConsoleIO consoleIO) {
         do {
             System.out.println("\n Add a pet to the Client \n");
-            final String name = consoleIO.input_read(
+            final String name = consoleIO.inputRead(
                     " Enter the name of client: ");
             for (int i = 0; i < data.clients.size(); i++) {
                 if (data.clients.get(i).getClientName().equals(name)) {
                     foundClient = name;
                     String.format(" Found the client - %s \n", foundClient);
-                    final String petName = consoleIO.input_read(
+                    final String petName = consoleIO.inputRead(
                             "\n Enter the nick of pet: ");
                     data.clients.get(i).getPetArrayList().add(petName);
                 }
@@ -69,7 +69,7 @@ public class AddPetAction implements PetClinicAction {
                 /**
                  * If client is not exist, ask to create him.
                  */
-                final String answer = consoleIO.input_read(
+                final String answer = consoleIO.inputRead(
                         "\n Add a new client? (y) ");
                     if (answer.equals("y")) {
                         data.actions.get(1).exe(data, consoleIO);

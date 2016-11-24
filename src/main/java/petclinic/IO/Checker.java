@@ -56,7 +56,7 @@ public class Checker{
 
         while (success_input == 0) {
             try{
-                String input_string = consoleIO.input_read(" Enter an action : ");
+                String input_string = consoleIO.inputRead(" Enter an action : ");
                 return_int_value = Integer.parseInt(input_string);
                 success_input = 1;
             }catch (NumberFormatException error){
@@ -75,7 +75,7 @@ public class Checker{
      */
     public boolean compare(final String etalon, final ConsoleIO consoleIO){
 
-        if (etalon.equals(consoleIO.input_read("\n Work further? (y)"))) return true;
+        if (etalon.equals(consoleIO.inputRead("\n Work further? (y)"))) return true;
         else return false;
     }
 }

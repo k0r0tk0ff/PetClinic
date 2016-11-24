@@ -7,7 +7,7 @@ import petclinic.IO.ConsoleIO;
 
 import java.util.Scanner;
 
-    /**
+    /**.
     * Class for start petclinic program
     * @author k0r0tk0ff
     * @author peterarsentev
@@ -17,7 +17,16 @@ import java.util.Scanner;
 
 public class Starter {
 
-    public static void main(String[] arg){
+    /**.
+    * main method
+    * @author k0r0tk0ff
+    * @author peterarsentev
+    * @since 17.10.2016
+    * @version 1.1.
+    * @param arg - input from console
+    */
+
+    public static void main(final String[] arg) {
 
         Data data = new Data();
         ConsoleIO consoleIO = new ConsoleIO(new Scanner(System.in));

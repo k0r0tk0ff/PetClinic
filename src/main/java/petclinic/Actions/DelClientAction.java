@@ -31,7 +31,7 @@ public class DelClientAction implements PetClinicAction {
     */
     @Override
     public final void exe(final Data data, final ConsoleIO consoleIO) {
-    final String name = consoleIO.input_read(
+    final String name = consoleIO.inputRead(
         " Enter the name of client: ");
     for (int i = 0; i < data.clients.size(); i++) {
         if (data.clients.get(i).getClientName().equals(name)) {

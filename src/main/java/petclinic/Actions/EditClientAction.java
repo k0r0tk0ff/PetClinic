@@ -25,11 +25,11 @@ public class EditClientAction implements PetClinicAction {
      */
     @Override
     public final void exe(final Data data, final ConsoleIO consoleIO) {
-    final String name = consoleIO.input_read(
+    final String name = consoleIO.inputRead(
             " Enter the name of client for edit: ");
     for (int i = 0; i < data.clients.size(); i++) {
         if (data.clients.get(i).getClientName().equals(name)) {
-            final String newName = consoleIO.input_read(
+            final String newName = consoleIO.inputRead(
                     "\n Enter the new name of client");
                 data.clients.get(i).setName(newName);
             }

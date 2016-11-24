@@ -33,7 +33,7 @@ public class DelPetAction implements PetClinicAction {
      */
     @Override
     public final void exe(final Data data, final ConsoleIO consoleIO) {
-         final String name = consoleIO.input_read(
+         final String name = consoleIO.inputRead(
                 " Enter the name of client: ");
          for (int i = 0; i < data.clients.size(); i++) {
                 if (data.clients.get(i).getClientName().equals(name)) {
@@ -50,7 +50,7 @@ public class DelPetAction implements PetClinicAction {
                     * Check input.
                     */
                     do {
-                        final String petNick = consoleIO.input_read(
+                        final String petNick = consoleIO.inputRead(
                                 "\n Enter the nick of pet for delete: ");
                                 if (data.clients.get(i).existPet(petNick)) {
                                     data.clients.get(i)

@@ -15,24 +15,14 @@ import java.util.Scanner;
 public class ConsoleIO implements IO, Closeable {
 
     private Scanner scanner;
-    private String a;
+    private String a = "a";
 
     public ConsoleIO(final Scanner scanner) {
         this.scanner = scanner;
     }
 
-   // public String getString(String msg){
-   //     System.out.println(msg);
-   //     return input_read();
-   // }
-
     @Override
-    public String print(String string){
-        return string;
-    }
-
-    @Override
-    public String input_read(String msg) {
+    public String inputRead(String msg) {
         System.out.println(msg);
         a = scanner.next();
         return a;
