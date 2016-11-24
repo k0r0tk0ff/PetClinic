@@ -1,6 +1,6 @@
 package petclinic.Data;
 
-    /**
+    /**.
     * Interface for storage that must contains clients and his pets
     * @author k0r0tk0ff
     * @author peterarsentev
@@ -9,7 +9,7 @@ package petclinic.Data;
     *
     */
 
-public interface I_DataModel {
+public interface IDataModel {
 
     /**
      * ArrayList of clients

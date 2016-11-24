@@ -7,7 +7,7 @@ import petclinic.Actions.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-    /**
+    /**.
     * Interface for console input from keyboard
     * @author k0r0tk0ff
     * @author peterarsentev
@@ -15,9 +15,17 @@ import java.util.concurrent.CopyOnWriteArrayList;
     * @version 1.0
     */
 
-public class Data implements I_DataModel {
+public class Data implements IDataModel {
 
-    public CopyOnWriteArrayList<Client> clients = new CopyOnWriteArrayList<>();
+        /**.
+         * Database of client
+         */
+    public CopyOnWriteArrayList<Client> clients =
+                new CopyOnWriteArrayList<>();
 
-    public ConcurrentHashMap<Integer, PetClinicAction> actions = new ConcurrentHashMap<>();
+        /**.
+         * Database of objects with methods
+         */
+    public ConcurrentHashMap<Integer, PetClinicAction> actions =
+                new ConcurrentHashMap<>();
 }

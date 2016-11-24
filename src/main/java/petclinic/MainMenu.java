@@ -1,13 +1,14 @@
 package petclinic;
 
-import petclinic.Actions.*;
+import petclinic.Actions.PetClinicAction;
+
 import petclinic.Data.Data;
 import petclinic.IO.Checker;
 import petclinic.IO.ConsoleIO;
 
 import java.util.Scanner;
 
-/**.
+    /**.
     * Class describe a MainMenu
     * @author k0r0tk0ff
     * @author peterarsentev
@@ -27,19 +28,19 @@ public class MainMenu {
     * Declare main variables:
     * Data data - data storage.
     */
-    private Data data;
+    private Data data = new Data();
 
     /**.
     * Declare main variables:
     * Checker checker - validator for input.
     */
-    private Checker checker;
+    private Checker checker = new Checker();
 
     /**.
     * Declare constructor.
-     * @param data - storage
-     * @param consoleIO - work with console
-     * @param checker - validator.
+    * @param data - storage
+    * @param consoleIO - work with console
+    * @param checker - validator.
     */
     public MainMenu(final Data data, final ConsoleIO consoleIO,
                     final Checker checker) {

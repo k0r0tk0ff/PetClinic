@@ -2,7 +2,7 @@ package petclinic;
 
 import java.util.concurrent.CopyOnWriteArrayList;
 
-    /**
+    /**.
     * Class describe a customer from petclinic
     * @author k0r0tk0ff
     * @author peterarsentev
@@ -11,58 +11,118 @@ import java.util.concurrent.CopyOnWriteArrayList;
     */
 
 public class Client {
-    String name;
-    int id;
-    int getPetIdReturn;
-    boolean existPetVariable = false;
-    CopyOnWriteArrayList<String> petArrayList;
 
-    public Client(int id, final String name, CopyOnWriteArrayList<String> petArrayList){
+        /**.
+         * Name name of client.
+         */
+    private String name;
+
+        /**.
+         * Id for find in database
+         */
+    private int id;
+
+        /**.
+         * For return id
+         */
+    private int getPetIdReturn;
+
+        /**.
+         * For determinate, exist pet or not
+         */
+    private boolean existPetVariable = false;
+
+        /**.
+         * database of client
+         */
+    private CopyOnWriteArrayList<String> petArrayList =
+                new CopyOnWriteArrayList<>();
+
+        /**.
+         * Default constructor
+         * @param id id of client
+         * @param name name of client
+         * @param petArrayList client`s pets
+         */
+    public Client(final int id, final String name,
+                  final CopyOnWriteArrayList<String> petArrayList) {
         this.id = id;
         this.name = name;
         this.petArrayList = petArrayList;
     }
 
-    public int getClientId (){
+        /**.
+         *
+         * @return int id of client
+         */
+    public final int getClientId() {
         return id;
     }
 
-    public void setName (final String new_name){
-        this.name = new_name;
+        /**.
+         *
+         * @param newName for rename
+         */
+    public final void setName(final String newName) {
+        this.name = newName;
     }
 
-    public void editPetNick (final String petNick, final String new_Nick){
-        for (int j = 0; j < this.petArrayList.size(); j++) {
+        /**.
+         *
+         * @param  petNick string value from console
+         * @param  newNick a new nick
+         *
+         */
+    public final void editPetNick(final String petNick, final String newNick) {
+    for (int j = 0; j < this.petArrayList.size(); j++) {
             if (petNick.equals(this.petArrayList.get(j))) {
-                petArrayList.set(j, new_Nick);
+                petArrayList.set(j, newNick);
             }
-        }
+    }
     }
 
-    public boolean existPet(final String petNick) {
-        for (int j = 0; j < this.petArrayList.size(); j++) {
-            if (petNick.equals(this.petArrayList.get(j))) {
+        /**.
+         *
+         * @param  petNickForExistPet string value from console
+         * @return if exist, return true.
+         */
+    public final boolean existPet(final String petNickForExistPet) {
+        for (String aPetArrayList : this.petArrayList) {
+            if (petNickForExistPet.equals(aPetArrayList)) {
                 existPetVariable = true;
             }
         }
         return existPetVariable;
     }
-    public int getPetId (final String petNick){
-        for(int j = 0; j < this.petArrayList.size(); j++){
-            if(petNick.equals(this.petArrayList.get(j))){
+
+        /**.
+         *
+         * @param petNick - String nick of pet
+         * @return int id of pet.
+         */
+    public final int getPetId(final String petNick) {
+        for (int j = 0; j < this.petArrayList.size(); j++) {
+            if (petNick.equals(this.petArrayList.get(j))) {
                 getPetIdReturn = j;
             }
         }
         return getPetIdReturn;
     }
 
-    public CopyOnWriteArrayList<String> getPetArrayList(){
+        /**.
+         *
+         * @return massive of pets.
+         */
+    public final CopyOnWriteArrayList<String> getPetArrayList() {
         return this.petArrayList;
     }
 
 
-
-    public String getClientName(){
+        /**.
+         *
+         * @return String name.
+         */
+    public final String getClientName() {
         return name;
     }
 

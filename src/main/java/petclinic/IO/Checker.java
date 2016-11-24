@@ -1,6 +1,6 @@
 package petclinic.IO;
 
-    /**
+    /**.
     * Validator of input data from console input
     * @author k0r0tk0ff
     * @author peterarsentev
@@ -8,74 +8,78 @@ package petclinic.IO;
     * @version 1.2
     */
 
-public class Checker{
+public class Checker {
 
-    /**
+    /**.
      * Method return double value after parsing String input from keyboard
      *
      * @return return_double_value
-     * @param  input_string (String variable from console)
+     * @param  inputString (String variable from console)
      */
-    public double getDouble(final String input_string){
+    public final double getDouble(final String inputString) {
 
         /**
-         * Initializate local field in methods body,
-         * for replacement values between method`s call
-         * @param  input_string (String variable from console)
-         * @return return_double_value
+         * Declare if for exit from cycle
          */
-        int success_input = 0;
-        double return_double_value = 0.0;
+        int successInput = 0;
 
-        while (success_input == 0) {
-            try{
-                return_double_value = Double.parseDouble(input_string);
-                success_input = 1;
-            }catch (NumberFormatException error){
+        /**
+         * Declare default value for variable
+         */
+        double returnDoubleValue = 0.0;
+
+        while (successInput == 0) {
+            try {
+                returnDoubleValue = Double.parseDouble(inputString);
+                successInput = 1;
+            } catch (NumberFormatException error) {
                 System.out.println("\n Error input !!! Try again !!!");
             }
         }
-        return return_double_value;
+        return returnDoubleValue;
     }
 
-    /**
+    /**.
      * Method return int value after parsing String input from keyboard
+     * @param  consoleIO input from console
+     * @return returnIntValue.
      *
-     * @return return_int_value
      */
-    public int getInt(ConsoleIO consoleIO){
+    public final int getInt(final ConsoleIO consoleIO) {
 
         /**
-         * Initializate local field in methods body,
-         * for replacement values between method`s call
-         * @param  input_string (String variable from console)
-         * @return return_int_value
+         * Declare if for exit from cycle
          */
-        int success_input = 0;
-        int return_int_value = 0;
+        int successInput = 0;
 
-        while (success_input == 0) {
-            try{
-                String input_string = consoleIO.inputRead(" Enter an action : ");
-                return_int_value = Integer.parseInt(input_string);
-                success_input = 1;
-            }catch (NumberFormatException error){
+        /**
+         * Declare default mean for variable
+         */
+        int returnIntValue = 0;
+
+        while (successInput == 0) {
+            try {
+                String inputString = consoleIO.inputRead(" Enter an action : ");
+                returnIntValue = Integer.parseInt(inputString);
+                successInput = 1;
+            } catch (NumberFormatException error) {
                 System.out.println("\n Error input !!! Try again !!!");
             }
         }
-        return return_int_value;
+        return returnIntValue;
     }
 
-    /**
-     * Method compare input String variable entered from keyboard with etalon value
+    /**.
+     * Method compare input String variable entered
+     * from keyboard with etalon value
      * before ask user question in message_to_out
      *
-     * @param  etalon parameter
-     * @return true or false
+     * @param  consoleIO input from console
+     * @param  etalon EtAlOn for compare
+     * @return true or false.
      */
-    public boolean compare(final String etalon, final ConsoleIO consoleIO){
-
-        if (etalon.equals(consoleIO.inputRead("\n Work further? (y)"))) return true;
-        else return false;
+    public final boolean compare(final String etalon,
+                                 final ConsoleIO consoleIO) {
+        return etalon.equals(consoleIO.inputRead("\n Work further? (y)"));
     }
 }

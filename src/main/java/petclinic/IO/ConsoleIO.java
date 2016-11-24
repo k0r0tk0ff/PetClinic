@@ -4,7 +4,7 @@ import java.io.Closeable;
 import java.io.IOException;
 import java.util.Scanner;
 
-    /**
+    /**.
     * Interface for console input from keyboard
     * @author k0r0tk0ff
     * @author peterarsentev
@@ -14,18 +14,29 @@ import java.util.Scanner;
 
 public class ConsoleIO implements IO, Closeable {
 
-    private Scanner scanner;
-    private String a = "a";
+    /**.
+    * Declare Scanner object
+    */
+    private Scanner scanner = new Scanner(System.in);
 
+    /**.
+    * Declare variable for return
+    */
+    private String returnValueForScanner = "a";
+
+    /**.
+    * Declare method for scan from console
+    * @param scanner input from console
+    */
     public ConsoleIO(final Scanner scanner) {
         this.scanner = scanner;
     }
 
     @Override
-    public String inputRead(String msg) {
+    public final String inputRead(final String msg) {
         System.out.println(msg);
-        a = scanner.next();
-        return a;
+        returnValueForScanner = scanner.next();
+        return returnValueForScanner;
     }
 
 

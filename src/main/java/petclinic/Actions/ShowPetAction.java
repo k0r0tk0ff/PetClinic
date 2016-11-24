@@ -43,7 +43,7 @@ public class ShowPetAction implements PetClinicAction {
                 }
             }
         }
-        System.out.println(foundClient+"\n");
+        System.out.println(foundClient);
     }
 
     /**.
@@ -67,9 +67,8 @@ public class ShowPetAction implements PetClinicAction {
      *
      * @return int key
      */
-
     @Override
-    public int key() {
+    public final int key() {
         return keyShowPetAction;
     }
 }
