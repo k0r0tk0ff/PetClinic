@@ -3,9 +3,6 @@ package petclinic.Actions;
 import org.junit.Test;
 import petclinic.Client;
 import petclinic.Data.Data;
-import petclinic.IO.ConsoleIO;
-
-import java.util.Scanner;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import static org.hamcrest.core.IsEqual.equalTo;
