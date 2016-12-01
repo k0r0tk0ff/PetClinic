@@ -1,6 +1,7 @@
 .idea/**
 .lessons.iml
 .target/**
+.target/*
 lessons.iml
 PetClinic.iml
 petclinic.iml
