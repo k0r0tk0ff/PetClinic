@@ -68,6 +68,16 @@ public class DelPetAction implements PetClinicAction {
          }
     }
 
+    @Override
+    public void exe(Data data, String clientName) {
+
+    }
+
+    @Override
+    public void exe(Data data, String clientName, String petNick) {
+
+    }
+
     /**.
      * Text output from console, describe what key
      * we can push for do this action AddPetAction

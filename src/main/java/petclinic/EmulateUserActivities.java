@@ -1,6 +1,7 @@
 package petclinic;
 
 import java.util.Scanner;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import petclinic.Actions.*;
 import petclinic.Data.Data;
@@ -25,23 +26,41 @@ public class EmulateUserActivities implements Runnable {
     private final String clientName;
     private final String petNick;
 
-    MainMenu mainMenuForThread;
+    private MainMenu privateMainMenuForThread;
 
 
 
 
-    public EmulateUserActivities(MainMenu mainMenuForThread, String clientName,
-                                String petNick, int keyForAction) {
+    public EmulateUserActivities(MainMenu privateMainMenuForThread, final String clientName,
+                                final String petNick, final int keyForAction) {
         this.keyForAction = keyForAction;
         this.petNick = petNick;
         this.clientName = clientName;
-        this.mainMenuForThread = mainMenuForThread;
+        this.privateMainMenuForThread = privateMainMenuForThread;
     }
 
 
+   // @Override
+   // public void run() {
+   //     privateMainMenuForThread.getData().actions.get(keyForAction).
+   //                 exe(privateMainMenuForThread.getData(), clientName, petNick);
+   // }
+
     @Override
     public void run() {
-        mainMenuForThread.getData().actions.get(keyForAction).
-                exe(this.mainMenuForThread.getData(), clientName, petNick);
+        //privateMainMenuForThread.getData().actions.get(keyForAction).
+        //        exe(privateMainMenuForThread.getData(), clientName, petNick);
+
+        privateMainMenuForThread.getData().clients.add(new Client(keyForAction, clientName,
+                new CopyOnWriteArrayList<String>()));
+
+        System.out.println("\n For DeBuG ");
+        System.out.println(keyForAction);
+        System.out.println(clientName);
+        System.out.println(petNick);
+
+
+    //    privateMainMenuForThread.getData().clients.add(new Client(
+    //            0, "aaa", new CopyOnWriteArrayList<>()));
     }
 }

@@ -47,7 +47,12 @@ public class AddClientAction implements PetClinicAction {
                 data.clients.add(client);
     }
 
-    /**
+    @Override
+    public void exe(Data data, String clientName, String petNick) {
+
+    }
+
+        /**
      * @since 14.10.2016
      * @version 1.0
      * @return text from console "Add a new client - 1"

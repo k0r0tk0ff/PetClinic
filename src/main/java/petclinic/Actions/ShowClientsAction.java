@@ -39,6 +39,22 @@ public class ShowClientsAction implements PetClinicAction {
         }
     }
 
+    @Override
+    public void exe(final Data data, final String clientName) {
+        System.out.println("\n Show the petclinic`s clients: \n");
+        for (Client client : data.clients) {
+            System.out.println(client.getClientName());
+        }
+    }
+
+    @Override
+    public void exe(Data data, String clientName, String petNick) {
+        System.out.println("\n Show the petclinic`s clients: \n");
+        for (Client client : data.clients) {
+            System.out.println(client.getClientName());
+        }
+    }
+
     /**.
      * Text output from console, describe what key
      * we can push for do this action ShowClientsAction

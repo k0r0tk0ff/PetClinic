@@ -42,6 +42,16 @@ public class DelClientAction implements PetClinicAction {
         System.out.println(String.format("%s \n", foundClient));
     }
 
+    @Override
+    public void exe(Data data, String clientName) {
+
+    }
+
+    @Override
+    public void exe(Data data, String clientName, String petNick) {
+
+    }
+
     /**.
     * Text output from console, describe what key
     * we can delete the client do this action DelClientAction

@@ -36,6 +36,16 @@ public class EditClientAction implements PetClinicAction {
     }
     }
 
+    @Override
+    public void exe(Data data, String clientName) {
+
+    }
+
+    @Override
+    public void exe(Data data, String clientName, String petNick) {
+
+    }
+
     /**.
     * Text output from console, describe what key
     * we can edit the client do this action EditClientAction

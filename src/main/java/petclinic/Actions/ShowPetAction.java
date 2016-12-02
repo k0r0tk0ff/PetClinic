@@ -46,6 +46,16 @@ public class ShowPetAction implements PetClinicAction {
         System.out.println(foundClient);
     }
 
+    @Override
+    public void exe(Data data, String clientName) {
+
+    }
+
+    @Override
+    public void exe(Data data, String clientName, String petNick) {
+
+    }
+
     /**.
      * Text output from console, describe what key
      * we can push for do this action ShowPetAction

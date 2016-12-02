@@ -80,7 +80,17 @@ public class AddPetAction implements PetClinicAction {
         } while (successExit == 0);
     }
 
-    /**.
+        @Override
+        public void exe(Data data, String clientName) {
+
+        }
+
+        @Override
+        public void exe(Data data, String clientName, String petNick) {
+
+        }
+
+        /**.
      * Text output from console, describe what key
      * we can push for do this action AddPetAction
      * @since 09.11.2016

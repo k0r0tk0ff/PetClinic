@@ -92,6 +92,16 @@ public class EditPetAction implements PetClinicAction {
         } while (successExit == 0);
     }
 
+    @Override
+    public void exe(Data data, String clientName) {
+
+    }
+
+    @Override
+    public void exe(Data data, String clientName, String petNick) {
+
+    }
+
     /**.
      * Text output from console, describe what key
      * we can edit the client do this action EditPetAction
