@@ -28,7 +28,7 @@ public class ShowClientsAction implements PetClinicAction {
      * Show clients in data storage.
      */
     @Override
-    public final void exe(final Data data, final ConsoleIO consoleIO) {
+    public synchronized final void exe(final Data data, final ConsoleIO consoleIO) {
 
         /**
          * Show clients.

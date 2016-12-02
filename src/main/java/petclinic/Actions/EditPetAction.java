@@ -47,7 +47,7 @@ public class EditPetAction implements PetClinicAction {
      * @since 10.11.2016.
      */
     @Override
-    public final void exe(final Data data, final ConsoleIO consoleIO) {
+    public synchronized final void exe(final Data data, final ConsoleIO consoleIO) {
         do {
             final String name = consoleIO.inputRead(
                     "Enter the name of client for edit the nick of his pet:");

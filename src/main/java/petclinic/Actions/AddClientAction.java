@@ -29,7 +29,7 @@ public class AddClientAction implements PetClinicAction {
     * add a new client to data storage.
     */
     @Override
-    public final void exe(final Data data, final ConsoleIO consoleIO) {
+    public synchronized final void exe(final Data data, final ConsoleIO consoleIO) {
         final String name = consoleIO.inputRead(" Enter the name of client: ");
         Client client = new Client(
                 iterableId++, name, new CopyOnWriteArrayList<>());

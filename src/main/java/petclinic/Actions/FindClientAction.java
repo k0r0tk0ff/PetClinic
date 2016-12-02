@@ -37,7 +37,7 @@ public class FindClientAction implements PetClinicAction {
      * @since 18.11.2016.
      */
     @Override
-    public final void exe(final Data data, final ConsoleIO consoleIO) {
+    public synchronized final void exe(final Data data, final ConsoleIO consoleIO) {
         do {
             final String nameForFound = consoleIO.inputRead(
                     " Enter the name of client for find: ");

@@ -54,8 +54,22 @@ public class MainMenu {
     * for further work.
     * @param action - method for action.
     */
-    final void loadAction(final PetClinicAction action) {
+    public final void loadAction(final PetClinicAction action) {
         this.data.actions.put(action.key(), action);
+    }
+
+        /**.
+         * Declare method of getData  - for work tests.
+         */
+    public Data getData() {
+        return this.data;
+    }
+
+        /**.
+         * Declare main method of project.
+         */
+    public ConsoleIO getConsoleIo() {
+        return this.consoleIO;
     }
 
         /**.

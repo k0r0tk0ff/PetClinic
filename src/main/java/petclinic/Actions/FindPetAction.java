@@ -34,7 +34,7 @@ public class FindPetAction implements PetClinicAction {
      * @since 18.11.2016
      */
     @Override
-    public final void exe(final Data data, final ConsoleIO consoleIO) {
+    public synchronized final void exe(final Data data, final ConsoleIO consoleIO) {
         do {
             final String nickForFind = consoleIO.inputRead(
                     " Enter the nick of pet for find: ");

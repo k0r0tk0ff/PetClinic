@@ -43,7 +43,7 @@ public class AddPetAction implements PetClinicAction {
     * add a new pet to internal client storage.
     */
     @Override
-    public final void exe(final Data data, final ConsoleIO consoleIO) {
+    public synchronized final void exe(final Data data, final ConsoleIO consoleIO) {
         do {
             System.out.println("\n Add a pet to the Client \n");
             final String name = consoleIO.inputRead(

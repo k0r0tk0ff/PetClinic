@@ -32,7 +32,7 @@ public class ShowPetAction implements PetClinicAction {
      * @return int key
      */
     @Override
-    public final void exe(final Data data, final ConsoleIO consoleIO) {
+    public synchronized final void exe(final Data data, final ConsoleIO consoleIO) {
         final String name = consoleIO.inputRead(
                 " Enter the name of client: ");
         for (int i = 0; i < data.clients.size(); i++) {

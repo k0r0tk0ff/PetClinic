@@ -3,6 +3,11 @@ package petclinic.Actions;
 import org.junit.Test;
 import petclinic.Client;
 import petclinic.Data.Data;
+import petclinic.IO.Checker;
+import petclinic.IO.ConsoleIO;
+import petclinic.MainMenu;
+
+import java.util.Scanner;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import static org.hamcrest.core.IsEqual.equalTo;
@@ -15,13 +20,26 @@ public class AddClientActionTest {
     @Test
     public void exe() throws Exception {
 
-        Data data = new Data();
-        Client client = new Client(
-                0, "name", new CopyOnWriteArrayList<>());
-        data.clients.add(client);
+            //arrange
+        MainMenu mainMenuForTest = new MainMenu(new Data(),
+                new ConsoleIO(new Scanner(System.in)), new Checker());
+        mainMenuForTest.loadAction(new AddClientAction());
 
-        assertTrue(data.clients.contains(client));
+            //act
+        mainMenuForTest.getData().actions.get(1).exe(mainMenuForTest.getData(),
+                mainMenuForTest.getConsoleIo());
 
+        int aaa = 0;
+        final String nameForFound = "aaa";
+        for (int i = 0; i < mainMenuForTest.getData().clients.size(); i++) {
+            if (mainMenuForTest.getData().clients.get(i).getClientName().
+                    equals(nameForFound)) {
+                aaa = 1;
+            }
+        }
+
+           //assert
+        assertEquals(1, aaa);
     }
 
     @Test

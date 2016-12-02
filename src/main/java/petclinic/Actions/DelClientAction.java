@@ -30,7 +30,7 @@ public class DelClientAction implements PetClinicAction {
     * @since 15.10.2016
     */
     @Override
-    public final void exe(final Data data, final ConsoleIO consoleIO) {
+    public synchronized final void exe(final Data data, final ConsoleIO consoleIO) {
     final String name = consoleIO.inputRead(
         " Enter the name of client: ");
     for (int i = 0; i < data.clients.size(); i++) {
