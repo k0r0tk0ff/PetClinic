@@ -26,6 +26,8 @@ public interface PetClinicAction {
      * @param consoleIO - console input
      */
     void exe(Data data, ConsoleIO consoleIO);
+    void exe(Data data, String clientName);
+    void exe(Data data, String clientName, String petNick);
 
     /**.
      * key - for bind to keyboard

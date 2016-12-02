@@ -1,39 +1,32 @@
 package petclinic;
 
-import petclinic.Actions.AddClientAction;
-import petclinic.Actions.PetClinicAction;
 import petclinic.Data.Data;
+import petclinic.IO.Checker;
+import petclinic.IO.ConsoleIO;
 
-import javax.swing.*;
+import java.util.Scanner;
+
 
 /**.
  * Emulate user activity.
  */
 public class EmulateUsers {
     public void main(String[] args) {
-        new EmulateUserActivites().startActivities();
-    }
 
-    public void startActivities(){
         Data data = new Data();
-        new EmulateUserActivites(
-                this.build(
-                        data,
-                        new String[] {"1", "Petr", "y"},
-                        new AddClientAction()
-                )
-        ).start();
-    }
+        ConsoleIO consoleIO = new ConsoleIO(new Scanner(System.in));
+        Checker checker = new Checker();
 
-    public MainMenu build(Data data, String[] answers, Action ... actions) {
-        MainMenu mainMenu = new MainMenu(
+        MainMenu mainMenuForThread = new MainMenu(data, consoleIO, checker);
 
-                new StubInput(answers)
-        );
-        for (this.data.actions:){
 
-        } (this.data.actions : actions) {
-            mainMenu.loadAction(action);
-        }
+        Thread thread1 = new Thread(new EmulateUserActivities(mainMenuForThread,"Petr","Murzik",1));
+        thread1.start();
+
+        Thread thread2 = new Thread(new EmulateUserActivities(mainMenuForThread,"Vasya","Bayun",1));
+        thread2.start();
+
+        Thread thread3 = new Thread(new EmulateUserActivities(mainMenuForThread,"Kodya","Murka",1));
+        thread3.start();
     }
 }

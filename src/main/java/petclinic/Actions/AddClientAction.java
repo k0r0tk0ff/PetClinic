@@ -16,10 +16,15 @@ import java.util.concurrent.CopyOnWriteArrayList;
     */
 public class AddClientAction implements PetClinicAction {
 
-    /**
+    /**.
     * Declare iterable variable for generate id for clients.
     */
     private int iterableId = 0;
+
+    /**.
+    * Declare iterable clientName - client name.
+    */
+    String clientName;
 
     /**
     * @since 14.10.2016
@@ -34,6 +39,12 @@ public class AddClientAction implements PetClinicAction {
         Client client = new Client(
                 iterableId++, name, new CopyOnWriteArrayList<>());
         data.clients.add(client);
+    }
+
+    public synchronized final void exe(final Data data, String clientName) {
+        Client client = new Client(
+            iterableId++, clientName, new CopyOnWriteArrayList<>());
+                data.clients.add(client);
     }
 
     /**
