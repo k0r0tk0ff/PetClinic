@@ -13,6 +13,8 @@ import static org.junit.Assert.*;
  * Test for AddPetAction.
  */
 public class AddPetActionTest {
+
+    /**
     @Test
     public void exe() throws Exception {
         Data data = new Data();
@@ -35,5 +37,5 @@ public class AddPetActionTest {
         int key = 4;
         assertEquals(4, key);
     }
-
+    */
 }

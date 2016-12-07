@@ -13,6 +13,11 @@ import static org.junit.Assert.*;
  * DelClientAction.
  */
 public class DelClientActionTest {
+
+    /**
+     *
+     */
+
     @Test
     public void exe() throws Exception {
         Data data = new Data();
@@ -38,5 +43,6 @@ public class DelClientActionTest {
         int key = 2;
         assertEquals(2, key);
     }
+
 
 }

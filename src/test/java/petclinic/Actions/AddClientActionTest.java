@@ -17,6 +17,9 @@ import static org.junit.Assert.*;
  * Test for AddClientAction
  */
 public class AddClientActionTest {
+
+    /**
+
     @Test
     public void exe() throws Exception {
 
@@ -54,4 +57,5 @@ public class AddClientActionTest {
         assertEquals(1, key);
     }
 
+    */
 }
