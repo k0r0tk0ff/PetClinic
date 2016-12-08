@@ -6,12 +6,14 @@
   <artifactId>petclinic</artifactId>
   <version>1.0-SNAPSHOT</version>
   <name>petclinic</name>
-  <packaging>jar</packaging>
+  <packaging>war</packaging>
+  <!-- <packaging>jar</packaging> -->
   <url>https://github.com/k0r0tk0ff/petclinic</url>
 
   <build>
     <plugins>
-            <plugin>
+        <!--
+        <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>cobertura-maven-plugin</artifactId>
                 <version>2.7</version>
@@ -41,6 +43,7 @@
                     </execution>
                 </executions>
             </plugin>
+        -->
        <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -70,6 +73,11 @@
       <artifactId>junit</artifactId>
       <version>4.8.2</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest-all -->
     <dependency>
