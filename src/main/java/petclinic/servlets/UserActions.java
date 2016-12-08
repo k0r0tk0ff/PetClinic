@@ -7,16 +7,30 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-/**
- * Created by root on 12/5/16.
+/**.
+ * Servlet for receive ang response
+ * http request.
  */
 public class UserActions extends HttpServlet {
+    /**
+     *
+     * @param req - http request from browser
+     * @param resp - http response from browser
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
         throws ServletException, IOException {
         resp.setContentType("text/html");
         PrintWriter out = new PrintWriter(resp.getOutputStream());
-        out.append(String.format("Hello, %s", "Petr"));
+
+        /**
+         * Use local variable login
+         * for test input pa
+         */
+        String login = req.getParameter("login");
+        out.append(String.format("Hello, %s", login));
         out.flush();
     }
 
