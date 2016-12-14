@@ -1,5 +1,7 @@
 package petclinic.servlets;
 
+import com.google.common.base.Joiner;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -31,6 +33,28 @@ public class UserActions extends HttpServlet {
          */
         String login = req.getParameter("login");
         out.append(String.format("Hello, %s", login));
+        out.append(
+                Joiner.on("")
+                .join("<!DOCTYPE html>",
+                        "<html lang = \"en\">\n",
+                        "<head>\n",
+                        "   <meta charset=\"UTF-8\">\n",
+                        "   <title></title>\n",
+                        "</head>",
+                        "<body>\n",
+                        "<form action=\"\" method=\"GET\">\n",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+
+
+                )
+        );
         out.flush();
     }
 
